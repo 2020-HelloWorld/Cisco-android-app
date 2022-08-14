@@ -12,6 +12,7 @@ class _BrandSignupState extends State<BrandSignup> {
   TextEditingController _email = new TextEditingController();
   TextEditingController _username = new TextEditingController();
   TextEditingController _password = new TextEditingController();
+  bool? terms = false;
 
   Future<void> signup() async{
 
@@ -22,10 +23,20 @@ class _BrandSignupState extends State<BrandSignup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.green,
+        backgroundColor: Colors.white,
         body:  Container(
           margin: EdgeInsets.all(20),
           alignment: Alignment.center,
+          decoration: BoxDecoration(
+              borderRadius: BorderRadius.circular(20),
+            gradient: LinearGradient(
+              colors: [Colors.white10, Colors.white],
+              begin: Alignment.topCenter,
+              end: Alignment.bottomCenter,
+              stops: [0.0, 0.4],
+              tileMode: TileMode.clamp,
+            ),
+          ),
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
@@ -35,15 +46,23 @@ class _BrandSignupState extends State<BrandSignup> {
                   decoration: InputDecoration(
                       icon: Icon(Icons.person),
                       border: InputBorder.none,
-                      labelText: "Enter Username",
-                      hintText: "Username"
+                      labelText: "Enter the Brand Name",
+                      hintText: "Brand Name",
+
                   ),
                   controller: _username,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.greenAccent,
-                    border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(20)
+                    color: Colors.white,
+                    // border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                    colors: [Colors.grey.shade300, Colors.white10],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: [0.0, 0.4],
+                    tileMode: TileMode.clamp,
+                  ),
                 ),
               ),
 
@@ -61,8 +80,15 @@ class _BrandSignupState extends State<BrandSignup> {
                   controller: _email,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.greenAccent,
-                    borderRadius: BorderRadius.circular(20)
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                    colors: [Colors.grey.shade300, Colors.white10],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: [0.0, 0.4],
+                    tileMode: TileMode.clamp,
+                  ),
                 ),
               ),
 
@@ -79,8 +105,15 @@ class _BrandSignupState extends State<BrandSignup> {
                   controller: _password,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.greenAccent,
-                    borderRadius: BorderRadius.circular(20)
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                    colors: [Colors.grey.shade300, Colors.white10],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: [0.0, 0.4],
+                    tileMode: TileMode.clamp,
+                  ),
                 ),
               ),
               Container(
@@ -96,13 +129,41 @@ class _BrandSignupState extends State<BrandSignup> {
                   controller: _password,
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.greenAccent,
-                    borderRadius: BorderRadius.circular(20)
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
+                  gradient: LinearGradient(
+                    colors: [Colors.grey.shade300, Colors.white10],
+                    begin: Alignment.topCenter,
+                    end: Alignment.bottomCenter,
+                    stops: [0.0, 0.4],
+                    tileMode: TileMode.clamp,
+                  ),
                 ),
               ),
+              Row(
+                children: [
+                  Checkbox(
+                      value: this.terms,
+                      shape: CircleBorder(),
+                      onChanged: (bool? value){
+                        setState((){
+                          this.terms = value;
+                        });
+                      }
+                  ),
+                  Text("Agree to terms and condition",
+                    style: TextStyle(
+                      fontSize: 17,
+                      fontStyle: FontStyle.italic,
+                      fontWeight: FontWeight.w300,
+                    ),
+                  ),
+                ],
+              ),
               Container(
-                height: 40,
-                width: 100,
+                margin: EdgeInsets.only(top: 20),
+                height: 60,
+                width: 200,
                 child: FlatButton(
                   child: Text("Sign Up",
                     style: TextStyle(
@@ -115,8 +176,16 @@ class _BrandSignupState extends State<BrandSignup> {
                   },
                 ),
                 decoration: BoxDecoration(
-                    color: Colors.black12,
-                    borderRadius: BorderRadius.circular(20)
+                    color: Colors.deepPurple.shade700.withOpacity(0.4),
+                    borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey.shade200,
+                      offset: Offset(2,2),
+                      spreadRadius: 3,
+                      blurRadius: 5
+                    )
+                  ]
                 ),
               )
             ],
