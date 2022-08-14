@@ -1,7 +1,7 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.cisco">
+    package="com.example.firstpg">
    <application
-        android:label="cisco"
+        android:label="firstpg"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity
