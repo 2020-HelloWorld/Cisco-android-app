@@ -1,7 +1,7 @@
-# firstpg
+# Flutter App
 
 A new Flutter project.
-First welcome page of the Interra app
+Interra app using flutter tool
 
 
 ## Getting Started
