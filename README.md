@@ -1,8 +1,6 @@
-# Flutter App
+# inluencer_signup2nd
 
 A new Flutter project.
-Interra app using flutter tool
-
 
 ## Getting Started
 
