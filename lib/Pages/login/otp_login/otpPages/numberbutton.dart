@@ -1,3 +1,5 @@
+import 'package:firstpg/Pages/login/otp_login/otpPages/Dashboard.dart';
+import 'package:firstpg/Pages/login/otp_login/otpPages/verify.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';

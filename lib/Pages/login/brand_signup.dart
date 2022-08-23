@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-import '../Dashboard/Dashboard.dart';
+import '../Dashboard/DashboardTest.dart';
 
 class BrandSignup extends StatefulWidget {
   const BrandSignup({Key? key}) : super(key: key);
