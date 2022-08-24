@@ -17,24 +17,23 @@ class _BrandSignupState extends State<BrandSignup> {
   TextEditingController _password2 = new TextEditingController();
   bool? terms = false;
 
-  Future<void> signup() async{
+  Future<void> signup() async {
     print(_username.text);
     print(_email.text);
     print(_password.text);
-    Navigator.push(context,MaterialPageRoute(
-        builder: (context)=>DashBoard()
-    ));
-
+    Navigator.push(
+        context, MaterialPageRoute(builder: (context) => DashBoard()));
   }
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         backgroundColor: Colors.white,
-        body:  Container(
+        body: Container(
           margin: EdgeInsets.all(20),
           alignment: Alignment.center,
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
               colors: [Colors.white10, Colors.white],
               begin: Alignment.topCenter,
@@ -51,18 +50,17 @@ class _BrandSignupState extends State<BrandSignup> {
                   margin: EdgeInsets.all(10),
                   child: TextFormField(
                     decoration: InputDecoration(
-                        icon: Icon(Icons.person),
-                        border: InputBorder.none,
-                        labelText: "Enter the Brand Name",
-                        hintText: "Brand Name",
-
+                      icon: Icon(Icons.person),
+                      border: InputBorder.none,
+                      labelText: "Enter the Brand Name",
+                      hintText: "Brand Name",
                     ),
                     controller: _username,
                   ),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      // border: Border.all(color: Colors.black),
-                      borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    // border: Border.all(color: Colors.black),
+                    borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       colors: [Colors.grey.shade300, Colors.white10],
                       begin: Alignment.topCenter,
@@ -82,13 +80,12 @@ class _BrandSignupState extends State<BrandSignup> {
                         border: InputBorder.none,
                         icon: Icon(Icons.mail),
                         labelText: "Enter Email",
-                        hintText: "Email"
-                    ),
+                        hintText: "Email"),
                     controller: _email,
                   ),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       colors: [Colors.grey.shade300, Colors.white10],
                       begin: Alignment.topCenter,
@@ -107,13 +104,12 @@ class _BrandSignupState extends State<BrandSignup> {
                         border: InputBorder.none,
                         icon: Icon(Icons.lock),
                         labelText: "Enter New Pasword",
-                        hintText: "Password"
-                    ),
+                        hintText: "Password"),
                     controller: _password,
                   ),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       colors: [Colors.grey.shade300, Colors.white10],
                       begin: Alignment.topCenter,
@@ -131,13 +127,12 @@ class _BrandSignupState extends State<BrandSignup> {
                         border: InputBorder.none,
                         icon: Icon(Icons.lock),
                         labelText: "Confirm your Pasword",
-                        hintText: "Password"
-                    ),
+                        hintText: "Password"),
                     controller: _password2,
                   ),
                   decoration: BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.circular(20),
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       colors: [Colors.grey.shade300, Colors.white10],
                       begin: Alignment.topCenter,
@@ -152,13 +147,13 @@ class _BrandSignupState extends State<BrandSignup> {
                     Checkbox(
                         value: this.terms,
                         shape: CircleBorder(),
-                        onChanged: (bool? value){
-                          setState((){
+                        onChanged: (bool? value) {
+                          setState(() {
                             this.terms = value;
                           });
-                        }
-                    ),
-                    Text("Agree to terms and condition",
+                        }),
+                    Text(
+                      "Agree to terms and condition",
                       style: TextStyle(
                         fontSize: 17,
                         fontStyle: FontStyle.italic,
@@ -171,49 +166,42 @@ class _BrandSignupState extends State<BrandSignup> {
                   margin: EdgeInsets.only(top: 20),
                   height: 60,
                   width: 200,
-                  child: FlatButton(
-                    child: Text("Sign Up",
+                  child: TextButton(
+                    child: Text(
+                      "Sign Up",
                       style: TextStyle(
                         fontWeight: FontWeight.bold,
-
                       ),
                     ),
-                    onPressed: (){
-                      if ( _username.text!="" && _email.text!="" && _password.text!="" && _password2.text==_password.text)
-                      {
-                        if(this.terms==false){
+                    onPressed: () {
+                      if (_username.text != "" &&
+                          _email.text != "" &&
+                          _password.text != "" &&
+                          _password2.text == _password.text) {
+                        if (this.terms == false) {
                           print("Agree to terms and condition");
-                        }
-                        else{
+                        } else {
                           signup();
                         }
-                      }
-                      else{
+                      } else {
                         print("Enter Valid Information");
                       }
-
                     },
                   ),
                   decoration: BoxDecoration(
                       color: Colors.deepPurple.shade700.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(20),
-                    boxShadow: [
-                      BoxShadow(
-                        color: Colors.grey.shade200,
-                        offset: Offset(2,2),
-                        spreadRadius: 3,
-                        blurRadius: 5
-                      )
-                    ]
-                  ),
+                      boxShadow: [
+                        BoxShadow(
+                            color: Colors.grey.shade200,
+                            offset: Offset(2, 2),
+                            spreadRadius: 3,
+                            blurRadius: 5)
+                      ]),
                 )
               ],
             ),
           ),
-        )
-    );
+        ));
   }
-  }
-
-
-
+}

@@ -1,4 +1,5 @@
-import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
+//import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
+import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
 import 'package:flutter/material.dart';
 import 'Pages/HomePage.dart';
 import 'Pages/login/otp_login/myHomePage.dart';
@@ -14,11 +15,9 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      theme: ThemeData(
-          fontFamily: 'Poppins'
-      ),
-      home: BrandDashboard()//MyHomePage(title: 'Hello',),
-    );
+        debugShowCheckedModeBanner: false,
+        theme: ThemeData(fontFamily: 'Poppins'),
+        home: BrandDetails() //MyHomePage(title: 'Hello',),
+        );
   }
 }
