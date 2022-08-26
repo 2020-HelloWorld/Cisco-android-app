@@ -165,7 +165,7 @@ class _UserSignupState extends State<UserSignup> {
                   margin: EdgeInsets.only(top: 20),
                   height: 60,
                   width: 200,
-                  child: FlatButton(
+                  child: TextButton(
                     child: Text(
                       "Sign Up",
                       style: TextStyle(
