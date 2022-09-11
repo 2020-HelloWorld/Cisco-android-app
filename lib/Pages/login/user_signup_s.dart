@@ -1,15 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter_neumorphic/flutter_neumorphic.dart';
+import './influencer_details.dart';
+import 'package:intl/intl.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+final TextEditingController _timeController = TextEditingController();
+
+class LoginPage1 extends StatefulWidget {
+  const LoginPage1({Key? key}) : super(key: key);
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<LoginPage1> createState() => _LoginPage1State();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _LoginPage1State extends State<LoginPage1> {
+  @override
+  TextEditingController _date = TextEditingController();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -138,34 +145,39 @@ class _LoginPageState extends State<LoginPage> {
                                     width: 179.5,
                                     // margin: EdgeInsets.all(10),
                                     child: TextFormField(
-                                      textAlign: TextAlign.left,
-                                      decoration: InputDecoration(
-                                        icon: Icon(Icons.calendar_month),
-                                        border: InputBorder.none,
-                                        hintText: "Date of Birth",
-                                        hintStyle: GoogleFonts.poppins(
-                                          textStyle: (TextStyle(
-                                            color: Color(0xff2F3843),
-                                            fontWeight: FontWeight.w200,
-                                            fontSize: 15,
-                                          )),
+                                        controller: _date,
+                                        textAlign: TextAlign.left,
+                                        decoration: InputDecoration(
+                                          icon: Icon(Icons.calendar_month),
+                                          border: InputBorder.none,
+                                          hintText: "Date of Birth",
+                                          hintStyle: GoogleFonts.poppins(
+                                            textStyle: (TextStyle(
+                                              color: Color(0xff2F3843),
+                                              fontWeight: FontWeight.w200,
+                                              fontSize: 15,
+                                            )),
+                                          ),
                                         ),
-                                      ),
-                                      onTap: () async {
-                                        DateTime? date = DateTime(1900);
-                                        FocusScope.of(context)
-                                            .requestFocus(new FocusNode());
+                                        onTap: () async {
+                                          DateTime? pickedDate =
+                                              await showDatePicker(
+                                                  context: context,
+                                                  initialDate: DateTime.now(),
+                                                  firstDate: DateTime(1950),
+                                                  lastDate: DateTime(2022));
+                                          if (pickedDate != null) {
+                                            setState(() {
+                                              _date.text =
+                                                  DateFormat('yyyy-MM-dd')
+                                                      .format(pickedDate);
+                                            });
+                                          }
+                                        }),
 
-                                        date = await showDatePicker(
-                                            context: context,
-                                            initialDate: DateTime.now(),
-                                            firstDate: DateTime(1950),
-                                            lastDate: DateTime(2023));
-                                      },
+                                    //dateCtl.text = date.toIso8601String();},
+                                    // controller: _email,
 
-                                      //dateCtl.text = date.toIso8601String();},
-                                      // controller: _email,
-                                    ),
                                     decoration: BoxDecoration(
                                       color: Colors.white,
                                       borderRadius: BorderRadius.circular(15),
@@ -289,7 +301,7 @@ class _LoginPageState extends State<LoginPage> {
                                 // margin: EdgeInsets.only(top: 20),
                                 height: 60,
                                 width: 200,
-                                child: TextButton(
+                                child: FlatButton(
                                   child: Text(
                                     "Continue",
                                     style: GoogleFonts.poppins(
@@ -300,6 +312,11 @@ class _LoginPageState extends State<LoginPage> {
                                     )),
                                   ),
                                   onPressed: () {
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                influencer_details()));
                                     ;
                                   },
                                 ),
@@ -339,3 +356,4 @@ class _LoginPageState extends State<LoginPage> {
     );
   }
 }
+
