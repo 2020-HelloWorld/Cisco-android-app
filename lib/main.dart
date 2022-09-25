@@ -1,8 +1,10 @@
 //import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
-import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
+//import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
+import 'package:firstpg/Pages/chat/chat_list.dart';
 import 'package:flutter/material.dart';
 import 'Pages/HomePage.dart';
 import 'Pages/login/otp_login/myHomePage.dart';
+import 'Pages/login/otp_login/otpPages/firstpage.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +19,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(fontFamily: 'Poppins'),
-        home: BrandDetails() //MyHomePage(title: 'Hello',),
+        home: ContactList() //MyHomePage(title: 'Hello',),
         );
   }
 }
