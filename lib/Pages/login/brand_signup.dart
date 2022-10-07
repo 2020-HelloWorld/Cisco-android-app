@@ -1,6 +1,10 @@
+import 'package:firstpg/Pages/login/signup.dart';
 import 'package:flutter/material.dart';
 
 import '../Dashboard/DashboardTest.dart';
+import 'brand_details.dart';
+import 'brand_details.dart';
+import 'brand_signup_s.dart';
 
 class BrandSignup extends StatefulWidget {
   const BrandSignup({Key? key}) : super(key: key);
@@ -28,7 +32,7 @@ class _BrandSignupState extends State<BrandSignup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: Color(0xffEBF3FF),
         body: Container(
           margin: EdgeInsets.all(20),
           alignment: Alignment.center,
@@ -170,8 +174,7 @@ class _BrandSignupState extends State<BrandSignup> {
                     child: Text(
                       "Sign Up",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontWeight: FontWeight.bold, color: Colors.black),
                     ),
                     onPressed: () {
                       if (_username.text != "" &&
@@ -181,7 +184,10 @@ class _BrandSignupState extends State<BrandSignup> {
                         if (this.terms == false) {
                           print("Agree to terms and condition");
                         } else {
-                          signup();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage()));
                         }
                       } else {
                         print("Enter Valid Information");

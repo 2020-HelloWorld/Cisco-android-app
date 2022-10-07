@@ -4,14 +4,14 @@ import 'package:flutter/src/widgets/framework.dart';
 
 import 'numberbutton.dart';
 
-class FirstPage extends StatefulWidget {
-  const FirstPage({super.key});
+class FirstPage1 extends StatefulWidget {
+  const FirstPage1({super.key});
 
   @override
-  State<FirstPage> createState() => _FirstPageState();
+  State<FirstPage1> createState() => _FirstPage1State();
 }
 
-class _FirstPageState extends State<FirstPage> {
+class _FirstPage1State extends State<FirstPage1> {
   String phonenumber = "";
   @override
   Widget build(BuildContext context) {
@@ -49,14 +49,14 @@ class _FirstPageState extends State<FirstPage> {
                   children: [
                     Padding(
                       padding:
-                          const EdgeInsets.only(top: 19, left: 128, right: 126),
+                          const EdgeInsets.only(top: 19, left: 18, right: 16),
                       child: Container(
-                        width: 53,
+                        width: 130,
                         height: 30,
                         child: Text(
-                          "Login",
+                          "Create Account",
                           style: TextStyle(
-                              fontSize: 20,
+                              fontSize: 16,
                               fontFamily:
                                   'Poppins', //This font isnt even there in the sys.
                               fontWeight: FontWeight.w400,

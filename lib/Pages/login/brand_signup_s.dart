@@ -1,6 +1,10 @@
+import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import './brand_signup.dart';
+import './brand_details.dart';
 
 class LoginPage extends StatefulWidget {
   const LoginPage({Key? key}) : super(key: key);
@@ -286,7 +290,11 @@ class _LoginPageState extends State<LoginPage> {
                                     )),
                                   ),
                                   onPressed: () {
-                                    ;
+                                    Navigator.push(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                Brand_details()));
                                   },
                                 ),
                                 decoration: BoxDecoration(

@@ -30,10 +30,8 @@ class _BrandDetailsState extends State<BrandDetails> {
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
                       SizedBox(width: 115),
-                      Image.network(
-                          'https://s3-alpha-sig.figma.com/img/adbc/73d2/a83a90a76086b19a9b93e8b994b69e84?Expires=1662336000&Signature=VfCR6sq5GO8vgEVtCP94C-os3tbfThE7RdqKLO-Equ7CYOjzqWj5-0ixBF-qroamrLWFpDAECYEVeAoYU27ja3mfMyyce8JtYy7BdJqk5i~G58-T5J6QLZY9YAsXnlvmA-vCiP4wAlBCnA45IfbqqJh~DA7ZoJTSmO1FqXCrDQWgdNbaaIxalJwTe7XCKiLBbnk3ZWl0~LNGm2Jblgj647UJS0MCHHsm17wFRBGSg8Z9lmDP3u8KZ2xK2uIeZHtmg1RsDvEpYXZMUEmzhOeP-j6jtfDy2FkNUb5lnpDDPcvaqwiJ1pZXnuiRkPudor0LTnj7RSrpyXrHti7ZqYQhjg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
-                          width: 145,
-                          height: 43),
+                      Image.asset("assets/images/logo.png",
+                          width: 145, height: 43),
                       //try providing asset img.
                       SizedBox(width: 66.52),
                       Icon(
@@ -50,7 +48,9 @@ class _BrandDetailsState extends State<BrandDetails> {
                   child: ListTile(
                     leading: Icon(Icons.search),
                     title: TextFormField(
-                      decoration: InputDecoration(border: InputBorder.none),
+                      decoration: InputDecoration(
+                          hintText: "Search an Influencer",
+                          border: InputBorder.none),
                     ),
                     trailing: Icon(Icons.filter_alt_rounded),
                   ),

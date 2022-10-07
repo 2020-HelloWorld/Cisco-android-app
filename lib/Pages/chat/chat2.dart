@@ -50,8 +50,8 @@ class Chat2 extends StatelessWidget {
                                   children: [
                                     CircleAvatar(
                                       radius: 25,
-                                      backgroundImage: NetworkImage(
-                                          'https://s3-alpha-sig.figma.com/img/27d6/5b50/6e347554649ee3358dd6cd64dfa9c403?Expires=1664755200&Signature=bpggEduYEhwNue17muJ2sz7E3DpSENYGs7z09LaIAYMsIdelEXoBW9vnnq8vCzUP6zFpA~ewAVhjqMbWj5odIyYuMbCcffjNOHO4i5QMLxWrwN~I6W1HJLmcT3SBXKO8FgMj2yHO7x0eQ7rPSiORyt~0wHmCWiv57BrCo86JX4enIRC6vNaDwWxBatWA~T1KLh1RtB98B9u4O0jgHXWO~WOPkqv7ol~9pRVJsQUmKJ6wjuY09HdcC-0mKlDIUy4Lw4vWHy6Rb8FmGkx-CtsZMqFdbBw0bcBTXvGP5ghaj9IRWN4aBPnDpFEYGYxzpcYkq9lx-BusAZk723LF93BzQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                                      backgroundImage: AssetImage(
+                                          'assets/images/contact1.jpg'),
                                     ),
                                     Positioned(
                                       top: 31,
@@ -151,8 +151,7 @@ class Chat2 extends StatelessWidget {
                   ),
                   CircleAvatar(
                     radius: 16,
-                    backgroundImage: NetworkImage(
-                        'https://s3-alpha-sig.figma.com/img/27d6/5b50/6e347554649ee3358dd6cd64dfa9c403?Expires=1664755200&Signature=bpggEduYEhwNue17muJ2sz7E3DpSENYGs7z09LaIAYMsIdelEXoBW9vnnq8vCzUP6zFpA~ewAVhjqMbWj5odIyYuMbCcffjNOHO4i5QMLxWrwN~I6W1HJLmcT3SBXKO8FgMj2yHO7x0eQ7rPSiORyt~0wHmCWiv57BrCo86JX4enIRC6vNaDwWxBatWA~T1KLh1RtB98B9u4O0jgHXWO~WOPkqv7ol~9pRVJsQUmKJ6wjuY09HdcC-0mKlDIUy4Lw4vWHy6Rb8FmGkx-CtsZMqFdbBw0bcBTXvGP5ghaj9IRWN4aBPnDpFEYGYxzpcYkq9lx-BusAZk723LF93BzQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                    backgroundImage: AssetImage('assets/images/contact1.jpg'),
                   ),
                   SizedBox(
                     width: 28,
@@ -272,8 +271,7 @@ class Chat2 extends StatelessWidget {
                   ),
                   CircleAvatar(
                     radius: 16,
-                    backgroundImage: NetworkImage(
-                        'https://s3-alpha-sig.figma.com/img/27d6/5b50/6e347554649ee3358dd6cd64dfa9c403?Expires=1664755200&Signature=bpggEduYEhwNue17muJ2sz7E3DpSENYGs7z09LaIAYMsIdelEXoBW9vnnq8vCzUP6zFpA~ewAVhjqMbWj5odIyYuMbCcffjNOHO4i5QMLxWrwN~I6W1HJLmcT3SBXKO8FgMj2yHO7x0eQ7rPSiORyt~0wHmCWiv57BrCo86JX4enIRC6vNaDwWxBatWA~T1KLh1RtB98B9u4O0jgHXWO~WOPkqv7ol~9pRVJsQUmKJ6wjuY09HdcC-0mKlDIUy4Lw4vWHy6Rb8FmGkx-CtsZMqFdbBw0bcBTXvGP5ghaj9IRWN4aBPnDpFEYGYxzpcYkq9lx-BusAZk723LF93BzQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                    backgroundImage: AssetImage('assets/images/contact1.jpg'),
                   ),
                   SizedBox(
                     width: 28,
@@ -320,8 +318,7 @@ class Chat2 extends StatelessWidget {
                   ),
                   CircleAvatar(
                     radius: 16,
-                    backgroundImage: NetworkImage(
-                        'https://s3-alpha-sig.figma.com/img/27d6/5b50/6e347554649ee3358dd6cd64dfa9c403?Expires=1664755200&Signature=bpggEduYEhwNue17muJ2sz7E3DpSENYGs7z09LaIAYMsIdelEXoBW9vnnq8vCzUP6zFpA~ewAVhjqMbWj5odIyYuMbCcffjNOHO4i5QMLxWrwN~I6W1HJLmcT3SBXKO8FgMj2yHO7x0eQ7rPSiORyt~0wHmCWiv57BrCo86JX4enIRC6vNaDwWxBatWA~T1KLh1RtB98B9u4O0jgHXWO~WOPkqv7ol~9pRVJsQUmKJ6wjuY09HdcC-0mKlDIUy4Lw4vWHy6Rb8FmGkx-CtsZMqFdbBw0bcBTXvGP5ghaj9IRWN4aBPnDpFEYGYxzpcYkq9lx-BusAZk723LF93BzQQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                    backgroundImage: AssetImage('assets/images/contact1.jpg'),
                   ),
                   SizedBox(
                     width: 28,

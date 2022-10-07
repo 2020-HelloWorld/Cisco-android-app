@@ -27,11 +27,12 @@ class _UserSignupState extends State<UserSignup> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        backgroundColor: Colors.white,
+        backgroundColor: const Color(0xffEBF3FF),
         body: Container(
           margin: EdgeInsets.all(20),
           alignment: Alignment.center,
           decoration: BoxDecoration(
+            color: const Color(0xffEBF3FF),
             borderRadius: BorderRadius.circular(20),
             gradient: LinearGradient(
               colors: [Colors.white10, Colors.white],
@@ -57,7 +58,7 @@ class _UserSignupState extends State<UserSignup> {
                     controller: _username,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: const Color(0xffEBF3FF),
                     // border: Border.all(color: Colors.black),
                     borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
@@ -83,7 +84,7 @@ class _UserSignupState extends State<UserSignup> {
                     controller: _email,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: const Color(0xffEBF3FF),
                     borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       colors: [Colors.grey.shade300, Colors.white10],
@@ -107,7 +108,7 @@ class _UserSignupState extends State<UserSignup> {
                     controller: _password,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: const Color(0xffEBF3FF),
                     borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       colors: [Colors.grey.shade300, Colors.white10],
@@ -130,7 +131,7 @@ class _UserSignupState extends State<UserSignup> {
                     controller: _password2,
                   ),
                   decoration: BoxDecoration(
-                    color: Colors.white,
+                    color: const Color(0xffEBF3FF),
                     borderRadius: BorderRadius.circular(20),
                     gradient: LinearGradient(
                       colors: [Colors.grey.shade300, Colors.white10],
@@ -169,8 +170,7 @@ class _UserSignupState extends State<UserSignup> {
                     child: Text(
                       "Sign Up",
                       style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                      ),
+                          fontWeight: FontWeight.bold, color: Colors.black),
                     ),
                     onPressed: () {
                       if (_username.text != "" &&

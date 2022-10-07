@@ -1,9 +1,10 @@
+import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
+import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
 import 'package:firstpg/Pages/login/brand_details.dart';
 import './brand_signup_s.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
-import './brand_details.dart';
 
 class Brand_details extends StatefulWidget {
   const Brand_details({Key? key}) : super(key: key);
@@ -11,6 +12,10 @@ class Brand_details extends StatefulWidget {
   @override
   State<Brand_details> createState() => _Brand_detailsState();
 }
+
+bool checkBoxBooleanValueVariable = false;
+bool checkBoxBooleanValueVariable1 = false;
+bool checkBoxBooleanValueVariable2 = false;
 
 class _Brand_detailsState extends State<Brand_details> {
   @override
@@ -39,7 +44,7 @@ class _Brand_detailsState extends State<Brand_details> {
               height: 18,
             ),
             Container(
-              height: 632,
+              height: 725,
               width: 342,
               //margin: EdgeInsets.all(10),
               // padding: EdgeInsets.all(10),
@@ -319,8 +324,267 @@ class _Brand_detailsState extends State<Brand_details> {
                           ],
                         ),
                         SizedBox(
-                          height: 300,
+                          height: 30,
                         ),
+                        Card(
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Container(
+                            //height: 111,
+                            // width: 200,
+                            child: TextButton(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Checkbox(
+                                        shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                    20.0))), // Rounded Checkbox
+                                        value: checkBoxBooleanValueVariable,
+                                        onChanged: (inputValue) {
+                                          setState(() {
+                                            checkBoxBooleanValueVariable =
+                                                inputValue!;
+                                            checkBoxBooleanValueVariable2 =
+                                                false;
+                                            checkBoxBooleanValueVariable1 =
+                                                false;
+                                          });
+                                        },
+                                      ),
+                                      Text(
+                                        "Starter",
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                          color: Color(0xff2F3843),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 20,
+                                        )),
+                                      ),
+                                      SizedBox(
+                                        width: 46,
+                                      ),
+                                      Text(
+                                        "599/-",
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                          color: Color(0xff2F3843),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 20,
+                                        )),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      "Feature explanation 1 ipsum loremFeature 1 ipsum lorem",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        color: Color(0xff2F3843),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14,
+                                      )),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              onPressed: () {},
+                            ),
+                            decoration: BoxDecoration(
+                                color: Color(0xffEBF3FF),
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.shade200,
+                                      //offset: Offset(4,4),
+                                      spreadRadius: 3,
+                                      blurRadius: 5)
+                                ]),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Card(
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Container(
+                            //height: 111,
+                            // width: 200,
+                            child: TextButton(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Checkbox(
+                                        shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                    20.0))), // Rounded Checkbox
+                                        value: checkBoxBooleanValueVariable1,
+                                        onChanged: (inputValue) {
+                                          setState(() {
+                                            checkBoxBooleanValueVariable1 =
+                                                inputValue!;
+                                            checkBoxBooleanValueVariable =
+                                                false;
+                                            checkBoxBooleanValueVariable2 =
+                                                false;
+                                          });
+                                        },
+                                      ),
+                                      Text(
+                                        "Pro",
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                          color: Color(0xff2F3843),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 20,
+                                        )),
+                                      ),
+                                      SizedBox(
+                                        width: 85,
+                                      ),
+                                      Text(
+                                        "999/-",
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                          color: Color(0xff2F3843),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 20,
+                                        )),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      "Feature explanation 1 ipsum loremFeature 1 ipsum lorem",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        color: Color(0xff2F3843),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14,
+                                      )),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              onPressed: () {},
+                            ),
+                            decoration: BoxDecoration(
+                                color: Color(0xffEBF3FF),
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.shade200,
+                                      //offset: Offset(4,4),
+                                      spreadRadius: 3,
+                                      blurRadius: 5)
+                                ]),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 10,
+                        ),
+                        Card(
+                          elevation: 5,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20.0),
+                          ),
+                          child: Container(
+                            //height: 111,
+                            // width: 200,
+                            child: TextButton(
+                              child: Column(
+                                children: [
+                                  Row(
+                                    children: [
+                                      Checkbox(
+                                        shape: const RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.all(
+                                                Radius.circular(
+                                                    20.0))), // Rounded Checkbox
+                                        value: checkBoxBooleanValueVariable2,
+                                        onChanged: (inputValue) {
+                                          setState(() {
+                                            checkBoxBooleanValueVariable2 =
+                                                inputValue!;
+                                            checkBoxBooleanValueVariable =
+                                                false;
+                                            checkBoxBooleanValueVariable1 =
+                                                false;
+                                          });
+                                        },
+                                      ),
+                                      Text(
+                                        "Enterprise",
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                          color: Color(0xff2F3843),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 20,
+                                        )),
+                                      ),
+                                      SizedBox(
+                                        width: 16,
+                                      ),
+                                      Text(
+                                        "1999/-",
+                                        style: GoogleFonts.poppins(
+                                            textStyle: TextStyle(
+                                          color: Color(0xff2F3843),
+                                          fontWeight: FontWeight.w700,
+                                          fontSize: 20,
+                                        )),
+                                      ),
+                                    ],
+                                  ),
+                                  SizedBox(
+                                    height: 5,
+                                  ),
+                                  Center(
+                                    child: Text(
+                                      "Feature explanation 1 ipsum loremFeature 1 ipsum lorem",
+                                      style: GoogleFonts.poppins(
+                                          textStyle: TextStyle(
+                                        color: Color(0xff2F3843),
+                                        fontWeight: FontWeight.w400,
+                                        fontSize: 14,
+                                      )),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              onPressed: () {},
+                            ),
+                            decoration: BoxDecoration(
+                                color: Color(0xffEBF3FF),
+                                borderRadius: BorderRadius.circular(20),
+                                boxShadow: [
+                                  BoxShadow(
+                                      color: Colors.grey.shade200,
+                                      //offset: Offset(4,4),
+                                      spreadRadius: 3,
+                                      blurRadius: 5)
+                                ]),
+                          ),
+                        ),
+                        SizedBox(
+                          height: 20,
+                        ),
+
                         Center(
                           child: Card(
                             elevation: 10,
@@ -341,7 +605,13 @@ class _Brand_detailsState extends State<Brand_details> {
                                     fontSize: 15,
                                   )),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              BrandDashboard()));
+                                },
                               ),
                               decoration: BoxDecoration(
                                   color: Colors.deepPurple.shade700

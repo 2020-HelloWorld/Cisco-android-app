@@ -4,6 +4,7 @@ import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:firstpg/Pages/chat/chat_list.dart';
 
 class Profile extends StatefulWidget {
   const Profile({super.key});
@@ -155,21 +156,30 @@ class _ProfileState extends State<Profile> {
                                               fontWeight: FontWeight.w400,
                                               fontSize: 14,
                                             )),
-                                        Container(
-                                          width: 170,
-                                          height: 33,
-                                          decoration: BoxDecoration(
-                                            color: Color(0xffB58BFF),
-                                            borderRadius: BorderRadius.all(
-                                                Radius.circular(8)),
+                                        GestureDetector(
+                                          child: Container(
+                                            width: 170,
+                                            height: 33,
+                                            decoration: BoxDecoration(
+                                              color: Color(0xffB58BFF),
+                                              borderRadius: BorderRadius.all(
+                                                  Radius.circular(8)),
+                                            ),
+                                            child: Center(
+                                              child: Text('Message',
+                                                  style: GoogleFonts.poppins(
+                                                    fontWeight: FontWeight.w400,
+                                                    fontSize: 14,
+                                                  )),
+                                            ),
                                           ),
-                                          child: Center(
-                                            child: Text('Message',
-                                                style: GoogleFonts.poppins(
-                                                  fontWeight: FontWeight.w400,
-                                                  fontSize: 14,
-                                                )),
-                                          ),
+                                          onTap: () {
+                                            Navigator.push(
+                                                context,
+                                                MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        ContactList()));
+                                          },
                                         )
                                       ],
                                     ),

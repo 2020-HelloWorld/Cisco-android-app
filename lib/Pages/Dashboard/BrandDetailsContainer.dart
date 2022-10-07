@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'BrandDetailsProfile.dart';
 
 class BrandDetailsCont extends StatelessWidget {
   final int index;
@@ -39,7 +40,7 @@ class BrandDetailsCont extends StatelessWidget {
                   clipBehavior: Clip.antiAliasWithSaveLayer,
                   children: <Widget>[
                     //Image asset must come here :
-                    Image.network(infl[index]["icon"], fit: BoxFit.cover),
+                    Image.asset(infl[index]["icon"], fit: BoxFit.cover),
                     Positioned(
                       left: 267,
                       bottom: 56.5,
@@ -66,7 +67,12 @@ class BrandDetailsCont extends StatelessWidget {
                                 Icons.star,
                                 color: Color(0xff354044),
                                 size: 15.83,
-                              )
+                              ),
+                              CircleAvatar(
+                                backgroundImage:
+                                    AssetImage(infl[index]["icon2"]),
+                                radius: 80,
+                              ),
                             ],
                           ),
                         ),
@@ -80,7 +86,7 @@ class BrandDetailsCont extends StatelessWidget {
                 child: Container(
                   width: 312,
                   height: 105.00,
-                  //color: Colors.blue,
+                  //color: Colors.black,
                   child: Column(
                     children: [
                       Padding(
@@ -166,21 +172,30 @@ class BrandDetailsCont extends StatelessWidget {
                               ),
                             ),
                             SizedBox(width: 15),
-                            Container(
-                                width: 177,
-                                height: 31,
-                                decoration: BoxDecoration(
-                                    color: Color(0xffD0B5FF),
-                                    borderRadius: BorderRadius.circular(6.44)),
-                                child: Center(
-                                  child: Text(
-                                    "View Profile",
-                                    style: GoogleFonts.poppins(
-                                        color: Color(0xff2F3843),
-                                        fontSize: 14.55,
-                                        fontWeight: FontWeight.w400),
-                                  ),
-                                )),
+                            GestureDetector(
+                              child: Container(
+                                  width: 177,
+                                  height: 31,
+                                  decoration: BoxDecoration(
+                                      color: Color(0xffD0B5FF),
+                                      borderRadius:
+                                          BorderRadius.circular(6.44)),
+                                  child: Center(
+                                    child: Text(
+                                      "View Profile",
+                                      style: GoogleFonts.poppins(
+                                          color: Color(0xff2F3843),
+                                          fontSize: 14.55,
+                                          fontWeight: FontWeight.w400),
+                                    ),
+                                  )),
+                              onTap: () {
+                                Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                        builder: (context) => Profile()));
+                              },
+                            ),
                           ],
                         ),
                       )
@@ -201,9 +216,10 @@ class BrandDetailsCont extends StatelessWidget {
                           spreadRadius: 2,
                           offset: Offset(-3, 3))
                     ]),
+
                     //Shadows need to be better :
                     child: CircleAvatar(
-                      backgroundImage: NetworkImage(infl[index]["icon2"]),
+                      backgroundImage: AssetImage(infl[index]["icon2"]),
                       radius: 80,
                     ),
                   )),

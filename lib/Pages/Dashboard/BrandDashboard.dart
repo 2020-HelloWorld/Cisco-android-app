@@ -1,3 +1,4 @@
+import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
 import 'package:flutter/material.dart';
 
 import 'DashboardHeader.dart';
@@ -11,22 +12,25 @@ class BrandDashboard extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: SingleChildScrollView(
-        child:Expanded(
-          child: Column(
-            children: [
-              DashboardHeader(),
-              SizedBox(height: 30,),
-              Container(
-                width: 480,
-                  child: ListTile(
-                    leading:Icon(Icons.search),
-                    title: TextFormField(
-                      decoration: InputDecoration(
-                      border: InputBorder.none
-                    ),),
-                    trailing: Icon(Icons.filter_alt_rounded),
-                  ),
-                decoration: BoxDecoration(
+          child: Expanded(
+        child: Column(
+          children: [
+            DashboardHeader(),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              width: 480,
+              child: ListTile(
+                leading: Icon(Icons.search),
+                title: TextFormField(
+                  decoration: InputDecoration(
+                      hintText: "Search an Infulencer",
+                      border: InputBorder.none),
+                ),
+                trailing: Icon(Icons.filter_alt_rounded),
+              ),
+              decoration: BoxDecoration(
                 color: Colors.white,
                 borderRadius: BorderRadius.circular(20),
                 gradient: LinearGradient(
@@ -37,49 +41,65 @@ class BrandDashboard extends StatelessWidget {
                   tileMode: TileMode.clamp,
                 ),
               ),
+            ),
+            SizedBox(
+              height: 50,
+            ),
+            ListTile(
+              title: Text(
+                "Trending",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
               ),
-              SizedBox(height: 50,),
-              ListTile(
-                title: Text(
-                  "Trending",
-                  style: TextStyle(
-                    fontSize: 25,
-                    fontWeight: FontWeight.w600
-                  ),
-                ),
-                trailing: Icon(Icons.arrow_forward,),
+              trailing: IconButton(
+                icon: Icon(Icons.arrow_forward),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BrandDetails()));
+                },
               ),
-              HorizontalList(),
-              SizedBox(height: 50,),
-              ListTile(
-                title: Text(
-                  "Trending",
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600
-                  ),
-                ),
-                trailing: Icon(Icons.arrow_forward,),
+            ),
+            HorizontalList(),
+            SizedBox(
+              height: 50,
+            ),
+            ListTile(
+              title: Text(
+                "Trending",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
               ),
-              HorizontalList(),
-              SizedBox(height: 50,),
-              ListTile(
-                title: Text(
-                  "Trending",
-                  style: TextStyle(
-                      fontSize: 25,
-                      fontWeight: FontWeight.w600
-                  ),
-                ),
-                trailing: Icon(Icons.arrow_forward,),
+              trailing: IconButton(
+                  icon: Icon(Icons.arrow_forward),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BrandDetails()));
+                  }),
+            ),
+            HorizontalList(),
+            SizedBox(
+              height: 50,
+            ),
+            ListTile(
+              title: Text(
+                "Trending",
+                style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
               ),
-              HorizontalList(),
-              SizedBox(height: 50,),
-
-            ],
-          ),
-        )
-      ),
+              trailing: IconButton(
+                icon: Icon(Icons.arrow_forward),
+                onPressed: () {
+                  Navigator.push(context,
+                      MaterialPageRoute(builder: (context) => BrandDetails()));
+                },
+              ),
+            ),
+            HorizontalList(),
+            SizedBox(
+              height: 50,
+            ),
+          ],
+        ),
+      )),
     );
   }
 }

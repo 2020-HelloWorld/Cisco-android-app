@@ -1,5 +1,6 @@
 import 'package:firstpg/Pages/login/otp_login/otpPages/Dashboard.dart';
 import 'package:firstpg/Pages/login/otp_login/otpPages/verify.dart';
+import 'package:firstpg/Pages/login/signup.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -19,7 +20,7 @@ class NumericPad extends StatelessWidget {
         decoration: BoxDecoration(color: Color(0xffEBEFF2)),
         child: Padding(
           padding:
-          const EdgeInsets.only(top: 27, left: 16, right: 17, bottom: 38),
+              const EdgeInsets.only(top: 27, left: 16, right: 17, bottom: 38),
           child: Container(
             width: 341,
             height: 189,
@@ -144,7 +145,7 @@ class NumericPad extends StatelessWidget {
                 .push(MaterialPageRoute(builder: (context) => Verify()));
           else
             Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => DashBoard()));
+                .push(MaterialPageRoute(builder: (context) => SignUp()));
         },
         child: Padding(
           padding: const EdgeInsets.all(4.0),
@@ -156,7 +157,7 @@ class NumericPad extends StatelessWidget {
                 borderRadius: BorderRadius.all(Radius.circular(4.4))),
             child: Center(
               child:
-              Icon(Icons.arrow_forward, size: 20.74, color: Colors.white),
+                  Icon(Icons.arrow_forward, size: 20.74, color: Colors.white),
             ),
           ),
         ),
