@@ -1,3 +1,4 @@
+import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
 import 'package:flutter/material.dart';
 import './user_signup_s.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -436,7 +437,13 @@ class _influencer_detailsState extends State<influencer_details> {
                                     fontSize: 15,
                                   )),
                                 ),
-                                onPressed: () {},
+                                onPressed: () {
+                                  Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              BrandDashboard()));
+                                },
                               ),
                               decoration: BoxDecoration(
                                   color: Colors.deepPurple.shade700
