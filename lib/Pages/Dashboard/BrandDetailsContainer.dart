@@ -68,11 +68,11 @@ class BrandDetailsCont extends StatelessWidget {
                                 color: Color(0xff354044),
                                 size: 15.83,
                               ),
-                              CircleAvatar(
-                                backgroundImage:
-                                    AssetImage(infl[index]["icon2"]),
-                                radius: 80,
-                              ),
+                              // CircleAvatar(
+                              //   backgroundImage:
+                              //       AssetImage(infl[index]["icon2"]),
+                              //   radius: 80,
+                              // ),
                             ],
                           ),
                         ),

@@ -301,7 +301,7 @@ class _LoginPage1State extends State<LoginPage1> {
                                 // margin: EdgeInsets.only(top: 20),
                                 height: 60,
                                 width: 200,
-                                child: FlatButton(
+                                child: TextButton(
                                   child: Text(
                                     "Continue",
                                     style: GoogleFonts.poppins(
