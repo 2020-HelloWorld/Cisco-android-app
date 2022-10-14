@@ -29,7 +29,10 @@ class NumericPad extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: <Widget>[
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height >
+                          MediaQuery.of(context).size.width
+                      ? MediaQuery.of(context).size.height * 0.05
+                      : MediaQuery.of(context).size.width * 0.05,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -41,7 +44,10 @@ class NumericPad extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height >
+                          MediaQuery.of(context).size.width
+                      ? MediaQuery.of(context).size.height * 0.05
+                      : MediaQuery.of(context).size.width * 0.05,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -53,7 +59,10 @@ class NumericPad extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height >
+                          MediaQuery.of(context).size.width
+                      ? MediaQuery.of(context).size.height * 0.05
+                      : MediaQuery.of(context).size.width * 0.05,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -65,7 +74,10 @@ class NumericPad extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  height: MediaQuery.of(context).size.height * 0.05,
+                  height: MediaQuery.of(context).size.height >
+                          MediaQuery.of(context).size.width
+                      ? MediaQuery.of(context).size.height * 0.05
+                      : MediaQuery.of(context).size.width * 0.05,
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                     crossAxisAlignment: CrossAxisAlignment.start,

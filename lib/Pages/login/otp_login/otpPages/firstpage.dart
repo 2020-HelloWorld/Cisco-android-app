@@ -15,11 +15,14 @@ class _FirstPageState extends State<FirstPage> {
   String phonenumber = "";
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: screenHeight * 0.02),
             Padding(
               padding: const EdgeInsets.only(top: 19, right: 115, left: 115),
               child: Center(

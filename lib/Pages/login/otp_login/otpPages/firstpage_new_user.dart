@@ -15,11 +15,14 @@ class _FirstPage1State extends State<FirstPage1> {
   String phonenumber = "";
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: SingleChildScrollView(
         child: Column(
           children: [
+            SizedBox(height: screenHeight * 0.02),
             Padding(
               padding: const EdgeInsets.only(top: 19, right: 115, left: 115),
               child: Center(
@@ -48,20 +51,15 @@ class _FirstPage1State extends State<FirstPage1> {
                 child: Column(
                   children: [
                     Padding(
-                      padding:
-                          const EdgeInsets.only(top: 19, left: 18, right: 16),
-                      child: Container(
-                        width: 130,
-                        height: 30,
-                        child: Text(
-                          "Create Account",
-                          style: TextStyle(
-                              fontSize: 16,
-                              fontFamily:
-                                  'Poppins', //This font isnt even there in the sys.
-                              fontWeight: FontWeight.w400,
-                              color: Color(0xff2F3843)),
-                        ),
+                      padding: const EdgeInsets.only(top: 19, left: 20),
+                      child: Text(
+                        "Create Account",
+                        style: TextStyle(
+                            fontSize: 20,
+                            fontFamily:
+                                'Poppins', //This font isnt even there in the sys.
+                            fontWeight: FontWeight.w400,
+                            color: Color(0xff2F3843)),
                       ),
                     ),
                     Padding(

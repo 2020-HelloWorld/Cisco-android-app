@@ -16,6 +16,8 @@ class BrandDetails extends StatefulWidget {
 class _BrandDetailsState extends State<BrandDetails> {
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: SafeArea(
@@ -29,7 +31,7 @@ class _BrandDetailsState extends State<BrandDetails> {
                     crossAxisAlignment: CrossAxisAlignment.center,
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
-                      SizedBox(width: 115),
+                      SizedBox(width: screenWidth * 0.3),
                       Image.asset("assets/images/logo.png",
                           width: 145, height: 43),
                       //try providing asset img.

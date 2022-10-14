@@ -41,6 +41,8 @@ dependencies:
   animated_bottom_navigation_bar: ^1.1.0
   intl: ^0.17.0
   responsive_framework: ^0.2.0
+  device_preview: ^1.1.0
+  sizer: ^2.0.15
 
 dev_dependencies:
   flutter_test:

@@ -9,12 +9,15 @@ class BrandDashboard extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double screenWidth = MediaQuery.of(context).size.width;
+    double screenHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: SingleChildScrollView(
           child: Expanded(
         child: Column(
           children: [
+            SizedBox(height: screenHeight * 0.03),
             DashboardHeader(),
             SizedBox(
               height: 30,
