@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import '../Dashboard/DashboardTest.dart';
+import './user_signup_s.dart';
 
 class UserSignup extends StatefulWidget {
   const UserSignup({Key? key}) : super(key: key);
@@ -180,7 +181,10 @@ class _UserSignupState extends State<UserSignup> {
                         if (this.terms == false) {
                           print("Agree to terms and condition");
                         } else {
-                          signup();
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => LoginPage1()));
                         }
                       } else {
                         print("Enter Valid Information");
