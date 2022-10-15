@@ -16,6 +16,13 @@ class Brand_details extends StatefulWidget {
 bool checkBoxBooleanValueVariable = false;
 bool checkBoxBooleanValueVariable1 = false;
 bool checkBoxBooleanValueVariable2 = false;
+Color _colorContainer = Color((0xffEBF3FF));
+Color _colorContainer1 = Color((0xffEBF3FF));
+Color _colorContainer2 = Color((0xffEBF3FF));
+Color _colorContainer3 = Color((0xffEBF3FF));
+Color _colorContainer4 = Color((0xffEBF3FF));
+Color _colorContainer5 = Color((0xffEBF3FF));
+Color _colorContainer6 = Color((0xffEBF3FF));
 
 class _Brand_detailsState extends State<Brand_details> {
   @override
@@ -31,7 +38,7 @@ class _Brand_detailsState extends State<Brand_details> {
           child: Center(
               child: Column(children: [
             SizedBox(
-              height: 24,
+              height: 18,
             ),
             Container(
               decoration: BoxDecoration(
@@ -41,10 +48,10 @@ class _Brand_detailsState extends State<Brand_details> {
               child: Image.asset('assets/images/logo.png'),
             ),
             SizedBox(
-              height: 18,
+              height: 14,
             ),
             Container(
-              height: 725,
+              height: 650,
               width: 342,
               //margin: EdgeInsets.all(10),
               // padding: EdgeInsets.all(10),
@@ -75,98 +82,104 @@ class _Brand_detailsState extends State<Brand_details> {
                         ),
                         Row(
                           children: [
-                            Container(
-                                height: 27,
-                                width: 114,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(8.5714)),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.5714),
-                                  ),
-                                  color: Color(
-                                    (0xffEBF3FF),
-                                  ),
-                                  elevation: 10,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(5.5734),
-                                    splashColor: Color(0xffB58BFF),
-                                    onTap: () {
-                                      debugPrint('Card tapped.');
-                                    },
-                                    child: Column(children: [
-                                      SizedBox(height: 3),
-                                      Text(
-                                        "Life Style",
-                                        style: TextStyle(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w700,
-                                        ),
+                            Ink(
+                              child: InkWell(
+                                child: Container(
+                                    height: 27,
+                                    width: 114,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.circular(8.5714),
+                                      color: _colorContainer,
+                                    ),
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.5714),
                                       ),
-                                    ]),
-                                  ),
-                                )),
+                                      color: _colorContainer,
+                                      elevation: 10,
+                                      child: Column(children: [
+                                        SizedBox(height: 3),
+                                        Text(
+                                          "Life Style",
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ]),
+                                    )),
+                                onTap: () {
+                                  setState(() {
+                                    _colorContainer =
+                                        _colorContainer == Color(0xffB58BFF)
+                                            ? Color(0xffEBF3FF)
+                                            : Color(0xffB58BFF);
+                                  });
+                                },
+                              ),
+                            ),
                             SizedBox(
                               width: 13,
                             ),
-                            Container(
-                                height: 27,
-                                width: 100,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(8.5714)),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.5714),
-                                  ),
-                                  color: Color(
-                                    (0xffEBF3FF),
-                                  ),
-                                  elevation: 10,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(5.5734),
-                                    splashColor: Color(0xffB58BFF),
-                                    onTap: () {
-                                      debugPrint('Card tapped.');
-                                    },
-                                    child: Column(children: [
-                                      SizedBox(height: 3),
-                                      Text(
-                                        "Journalist",
-                                        style: TextStyle(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w700,
-                                        ),
+                            Ink(
+                              child: InkWell(
+                                child: Container(
+                                    height: 27,
+                                    width: 100,
+                                    decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.circular(8.5714),
+                                      color: _colorContainer1,
+                                    ),
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.5714),
                                       ),
-                                    ]),
-                                  ),
-                                )),
+                                      color: _colorContainer1,
+                                      elevation: 10,
+                                      child: Column(children: [
+                                        SizedBox(height: 3),
+                                        Text(
+                                          "Journalist",
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ]),
+                                    )),
+                                onTap: () {
+                                  setState(() {
+                                    _colorContainer1 =
+                                        _colorContainer1 == Color(0xffB58BFF)
+                                            ? Color(0xffEBF3FF)
+                                            : Color(0xffB58BFF);
+                                  });
+                                },
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(height: 15),
                         Row(
                           children: [
-                            Container(
-                                height: 27,
-                                width: 76,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(8.5714)),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.5714),
-                                  ),
-                                  color: Color(
-                                    (0xffEBF3FF),
-                                  ),
-                                  elevation: 10,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(5.5734),
-                                    splashColor: Color(0xffB58BFF),
-                                    onTap: () {
-                                      debugPrint('Card tapped.');
-                                    },
+                            InkWell(
+                              child: Container(
+                                  height: 27,
+                                  width: 76,
+                                  decoration: BoxDecoration(
+                                      borderRadius:
+                                          BorderRadius.circular(8.5714)),
+                                  child: Card(
+                                    shape: RoundedRectangleBorder(
+                                      borderRadius:
+                                          BorderRadius.circular(5.5714),
+                                    ),
+                                    color: _colorContainer2,
+                                    elevation: 10,
                                     child: Column(children: [
                                       SizedBox(height: 3),
                                       Text(
@@ -177,150 +190,174 @@ class _Brand_detailsState extends State<Brand_details> {
                                         ),
                                       ),
                                     ]),
-                                  ),
-                                )),
+                                  )),
+                              onTap: () {
+                                setState(() {
+                                  _colorContainer2 =
+                                      _colorContainer2 == Color(0xffB58BFF)
+                                          ? Color(0xffEBF3FF)
+                                          : Color(0xffB58BFF);
+                                });
+                              },
+                            ),
                             SizedBox(
                               width: 14,
                             ),
-                            Container(
-                                height: 27,
-                                width: 83,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(8.5714)),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.5714),
-                                  ),
-                                  color: Color(
-                                    (0xffEBF3FF),
-                                  ),
-                                  elevation: 10,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(5.5734),
-                                    splashColor: Color(0xffB58BFF),
-                                    onTap: () {
-                                      debugPrint('Card tapped.');
-                                    },
-                                    child: Column(children: [
-                                      SizedBox(height: 3),
-                                      Text(
-                                        "Health",
-                                        style: TextStyle(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w700,
-                                        ),
+                            Ink(
+                              child: InkWell(
+                                child: Container(
+                                    height: 27,
+                                    width: 83,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(8.5714)),
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.5714),
                                       ),
-                                    ]),
-                                  ),
-                                )),
+                                      color: _colorContainer3,
+                                      elevation: 10,
+                                      child: Column(children: [
+                                        SizedBox(height: 3),
+                                        Text(
+                                          "Health",
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ]),
+                                    )),
+                                onTap: () {
+                                  setState(() {
+                                    _colorContainer3 =
+                                        _colorContainer3 == Color(0xffB58BFF)
+                                            ? Color(0xffEBF3FF)
+                                            : Color(0xffB58BFF);
+                                  });
+                                },
+                              ),
+                            ),
                             SizedBox(
                               width: 14,
                             ),
-                            Container(
-                                height: 27,
-                                width: 73,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(8.5714)),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.5714),
-                                  ),
-                                  color: Color(
-                                    (0xffEBF3FF),
-                                  ),
-                                  elevation: 10,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(5.5734),
-                                    splashColor: Color(0xffB58BFF),
-                                    onTap: () {
-                                      debugPrint('Card tapped.');
-                                    },
-                                    child: Column(children: [
-                                      SizedBox(height: 3),
-                                      Text(
-                                        "Food",
-                                        style: TextStyle(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w700,
-                                        ),
+                            Ink(
+                              child: InkWell(
+                                child: Container(
+                                    height: 27,
+                                    width: 73,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(8.5714)),
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.5714),
                                       ),
-                                    ]),
-                                  ),
-                                )),
+                                      color: _colorContainer4,
+                                      elevation: 10,
+                                      child: Column(children: [
+                                        SizedBox(height: 3),
+                                        Text(
+                                          "Food",
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ]),
+                                    )),
+                                onTap: () {
+                                  setState(() {
+                                    _colorContainer4 =
+                                        _colorContainer4 == Color(0xffB58BFF)
+                                            ? Color(0xffEBF3FF)
+                                            : Color(0xffB58BFF);
+                                  });
+                                },
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(height: 15),
                         Row(
                           children: [
-                            Container(
-                                height: 27,
-                                width: 96,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(8.5714)),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.5714),
-                                  ),
-                                  color: Color(
-                                    (0xffEBF3FF),
-                                  ),
-                                  elevation: 10,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(5.5734),
-                                    splashColor: Color(0xffB58BFF),
-                                    onTap: () {
-                                      debugPrint('Card tapped.');
-                                    },
-                                    child: Column(children: [
-                                      SizedBox(height: 3),
-                                      Text(
-                                        "Finance",
-                                        style: TextStyle(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w700,
-                                        ),
+                            Ink(
+                              child: InkWell(
+                                child: Container(
+                                    height: 27,
+                                    width: 96,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(8.5714)),
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.5714),
                                       ),
-                                    ]),
-                                  ),
-                                )),
+                                      color: _colorContainer5,
+                                      elevation: 10,
+                                      child: Column(children: [
+                                        SizedBox(height: 3),
+                                        Text(
+                                          "Finance",
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ]),
+                                    )),
+                                onTap: () {
+                                  setState(() {
+                                    _colorContainer5 =
+                                        _colorContainer5 == Color(0xffB58BFF)
+                                            ? Color(0xffEBF3FF)
+                                            : Color(0xffB58BFF);
+                                  });
+                                },
+                              ),
+                            ),
                             SizedBox(
                               width: 14,
                             ),
-                            Container(
-                                height: 27,
-                                width: 96,
-                                decoration: BoxDecoration(
-                                    borderRadius:
-                                        BorderRadius.circular(8.5714)),
-                                child: Card(
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5.5714),
-                                  ),
-                                  color: Color(
-                                    (0xffEBF3FF),
-                                  ),
-                                  elevation: 10,
-                                  child: InkWell(
-                                    borderRadius: BorderRadius.circular(5.5734),
-                                    splashColor: Color(0xffB58BFF),
-                                    onTap: () {
-                                      debugPrint('Card tapped.');
-                                    },
-                                    child: Column(children: [
-                                      SizedBox(height: 3),
-                                      Text(
-                                        "Gaming",
-                                        style: TextStyle(
-                                          fontSize: 11,
-                                          fontWeight: FontWeight.w700,
-                                        ),
+                            Ink(
+                              child: InkWell(
+                                child: Container(
+                                    height: 27,
+                                    width: 96,
+                                    decoration: BoxDecoration(
+                                        borderRadius:
+                                            BorderRadius.circular(8.5714)),
+                                    child: Card(
+                                      shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(5.5714),
                                       ),
-                                    ]),
-                                  ),
-                                )),
+                                      color: _colorContainer6,
+                                      elevation: 10,
+                                      child: Column(children: [
+                                        SizedBox(height: 3),
+                                        Text(
+                                          "Gaming",
+                                          style: TextStyle(
+                                            fontSize: 11,
+                                            fontWeight: FontWeight.w700,
+                                          ),
+                                        ),
+                                      ]),
+                                    )),
+                                onTap: () {
+                                  setState(() {
+                                    _colorContainer6 =
+                                        _colorContainer6 == Color(0xffB58BFF)
+                                            ? Color(0xffEBF3FF)
+                                            : Color(0xffB58BFF);
+                                  });
+                                },
+                              ),
+                            ),
                           ],
                         ),
                         SizedBox(
@@ -357,19 +394,7 @@ class _Brand_detailsState extends State<Brand_details> {
                                         },
                                       ),
                                       Text(
-                                        "Starter",
-                                        style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                          color: Color(0xff2F3843),
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 20,
-                                        )),
-                                      ),
-                                      SizedBox(
-                                        width: 46,
-                                      ),
-                                      Text(
-                                        "599/-",
+                                        "Free",
                                         style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                           color: Color(0xff2F3843),
@@ -380,18 +405,16 @@ class _Brand_detailsState extends State<Brand_details> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 5,
+                                    height: 1,
                                   ),
-                                  Center(
-                                    child: Text(
-                                      "Feature explanation 1 ipsum loremFeature 1 ipsum lorem",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: TextStyle(
-                                        color: Color(0xff2F3843),
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                      )),
-                                    ),
+                                  Text(
+                                    "unlimited searches",
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                      color: Color(0xff2F3843),
+                                      fontWeight: FontWeight.w400,
+                                      fontSize: 16,
+                                    )),
                                   ),
                                 ],
                               ),
@@ -443,19 +466,7 @@ class _Brand_detailsState extends State<Brand_details> {
                                         },
                                       ),
                                       Text(
-                                        "Pro",
-                                        style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                          color: Color(0xff2F3843),
-                                          fontWeight: FontWeight.w700,
-                                          fontSize: 20,
-                                        )),
-                                      ),
-                                      SizedBox(
-                                        width: 85,
-                                      ),
-                                      Text(
-                                        "999/-",
+                                        "Pay as you go",
                                         style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                           color: Color(0xff2F3843),
@@ -470,12 +481,12 @@ class _Brand_detailsState extends State<Brand_details> {
                                   ),
                                   Center(
                                     child: Text(
-                                      "Feature explanation 1 ipsum loremFeature 1 ipsum lorem",
+                                      "Rs. 80/- per Influencer",
                                       style: GoogleFonts.poppins(
                                           textStyle: TextStyle(
                                         color: Color(0xff2F3843),
                                         fontWeight: FontWeight.w400,
-                                        fontSize: 14,
+                                        fontSize: 16,
                                       )),
                                     ),
                                   ),
@@ -529,7 +540,7 @@ class _Brand_detailsState extends State<Brand_details> {
                                         },
                                       ),
                                       Text(
-                                        "Enterprise",
+                                        "Premium",
                                         style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                           color: Color(0xff2F3843),
@@ -541,7 +552,7 @@ class _Brand_detailsState extends State<Brand_details> {
                                         width: 16,
                                       ),
                                       Text(
-                                        "1999/-",
+                                        "599/-",
                                         style: GoogleFonts.poppins(
                                             textStyle: TextStyle(
                                           color: Color(0xff2F3843),
@@ -553,17 +564,6 @@ class _Brand_detailsState extends State<Brand_details> {
                                   ),
                                   SizedBox(
                                     height: 5,
-                                  ),
-                                  Center(
-                                    child: Text(
-                                      "Feature explanation 1 ipsum loremFeature 1 ipsum lorem",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: TextStyle(
-                                        color: Color(0xff2F3843),
-                                        fontWeight: FontWeight.w400,
-                                        fontSize: 14,
-                                      )),
-                                    ),
                                   ),
                                 ],
                               ),

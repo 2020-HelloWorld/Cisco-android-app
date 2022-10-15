@@ -10,8 +10,8 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    double screenWidth = MediaQuery.of(context).size.width;
-    double screenHeight = MediaQuery.of(context).size.height;
+    double screenwidth = MediaQuery.of(context).size.width;
+    double screenheight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: Center(
@@ -24,7 +24,7 @@ class HomePage extends StatelessWidget {
                   Column(
                     children: [
                       SizedBox(
-                        height: 7,
+                        height: screenheight * 0.03,
                       ),
                       Card(
                         color: Color(0xffEBF3FF),
@@ -37,21 +37,21 @@ class HomePage extends StatelessWidget {
                         child: Column(
                           children: [
                             SizedBox(
-                              height: 18,
+                              height: screenheight * 0.023,
                             ),
                             Row(children: [
                               SizedBox(
-                                width: 40,
+                                width: screenwidth * 0.064,
                               ),
                               Image.asset(
                                 'assets/images/logo.png',
                               ),
                               SizedBox(
-                                width: 40,
+                                width: screenwidth * 0.064,
                               ),
                             ]),
                             SizedBox(
-                              height: 18,
+                              height: screenheight * 0.023,
                             )
                           ],
                         ),
@@ -64,8 +64,13 @@ class HomePage extends StatelessWidget {
                             color: Colors.white,
                             borderRadius: BorderRadius.circular(10),
                           ),
-                          child: Image.asset(
-                            'assets/images/firstpageimg.png',
+                          child: Container(
+                            color: Color(0xffEBF3FF),
+                            child: Image.asset(
+                              'assets/images/firstpageimg.png',
+                              width: screenwidth * 0.7,
+                              height: screenheight * 0.36,
+                            ),
                           )),
                       SizedBox(
                         height: 15.0,
