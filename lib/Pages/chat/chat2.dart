@@ -8,6 +8,7 @@ class Chat2 extends StatelessWidget {
   const Chat2({Key? key}) : super(key: key);
   @override
   Widget build(BuildContext context) {
+    double screenheight = MediaQuery.of(context).size.height;
     double screenwidth = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
@@ -393,7 +394,7 @@ class Chat2 extends StatelessWidget {
                 ],
               ),
               SizedBox(
-                height: 74,
+                height: screenheight * 0.04,
               ),
               Neumorphic(
                 margin: EdgeInsets.all(10),
