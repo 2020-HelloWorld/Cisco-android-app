@@ -165,11 +165,27 @@ class Chat2 extends StatelessWidget {
                       boxShadow: [
                         BoxShadow(
                           color: Colors.grey.withOpacity(0.5),
-                          spreadRadius: 3,
-                          blurRadius: 3,
-                          offset: Offset(0, 2), // changes position of shadow
+                          spreadRadius: 4,
+                          blurRadius: 4,
+                          offset:
+                              Offset(2.5, 2.5), // changes position of shadow
+                        ),
+                        BoxShadow(
+                          color: Color(0xffFFFFFF),
+                          spreadRadius: 2.5,
+                          blurRadius: 2.5,
+                          offset:
+                              Offset(-1.5, -1.5), // changes position of shadow
                         ),
                       ],
+                      // boxShadow: [
+                      //   BoxShadow(
+                      //     color: Colors.grey.withOpacity(0.5),
+                      //     spreadRadius: 3,
+                      //     blurRadius: 3,
+                      //     offset: Offset(0, 2), // changes position of shadow
+                      //   ),
+                      // ],
                       borderRadius: BorderRadius.only(
                         topLeft: Radius.circular(10),
                         topRight: Radius.circular(10),

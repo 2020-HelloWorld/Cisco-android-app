@@ -2,6 +2,7 @@
 //import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
 
 import 'package:device_preview/device_preview.dart';
+import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
 import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
 import 'package:firstpg/Pages/chat/chat_list.dart';
 import 'package:flutter/material.dart';

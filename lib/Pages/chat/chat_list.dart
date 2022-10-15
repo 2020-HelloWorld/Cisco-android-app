@@ -49,18 +49,30 @@ class _ContactListState extends State<ContactList> {
               child: Container(
                 width: 322.w, //screenWidth * 0.9
                 height: 39, //screenWidth * 0.9
-                child: Row(
-                  children: [
-                    SizedBox(width: 15.w),
-                    Text("search",
-                        style: GoogleFonts.poppins(
-                            textStyle: TextStyle(
-                                fontWeight: FontWeight.w400,
-                                color: Color(0xff5C5858)))),
-                    SizedBox(width: 223.w), //screenWidth * 0.65
-                    Icon(Icons.search, color: Color(0xff5C5858))
-                  ],
+                child: Padding(
+                  padding: EdgeInsets.only(left: 15.w),
+                  child: TextFormField(
+                    decoration: InputDecoration(
+                      suffixIcon: Icon(Icons.search, color: Color(0xff5C5858)),
+                      border: InputBorder.none,
+                      // labelText: "Enter the Brand Name",
+                      hintText: 'search',
+                    ),
+                    // controller: _username,
+                  ),
                 ),
+                // child: Row(
+                //   children: [
+                //     SizedBox(width: 15.w),
+                //     Text("search",
+                //         style: GoogleFonts.poppins(
+                //             textStyle: TextStyle(
+                //                 fontWeight: FontWeight.w400,
+                //                 color: Color(0xff5C5858)))),
+                //     SizedBox(width: 223.w), //screenWidth * 0.65
+                //     Icon(Icons.search, color: Color(0xff5C5858))
+                //   ],
+                // ),
                 //im looking for a better sol fr the search bar....which can be implemented to all pgs.
                 decoration: BoxDecoration(
                   color: Color(0xffB58BFF),

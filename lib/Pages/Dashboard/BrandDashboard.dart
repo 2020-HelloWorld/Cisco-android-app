@@ -33,6 +33,20 @@ class BrandDashboard extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.white,
               borderRadius: BorderRadius.circular(20),
+              boxShadow: [
+                BoxShadow(
+                  color: Color(0xFF9E9E9E).withOpacity(0.5),
+                  spreadRadius: 1.5,
+                  blurRadius: 1.5,
+                  offset: Offset(-1.5, -1.5), // changes position of shadow
+                ),
+                BoxShadow(
+                  color: Color(0xffFFFFFF),
+                  spreadRadius: 0.2,
+                  blurRadius: 0.2,
+                  offset: Offset(1, 1), // changes position of shadow
+                ),
+              ],
               gradient: LinearGradient(
                 colors: [Colors.grey.shade300, Colors.white10],
                 begin: Alignment.topCenter,

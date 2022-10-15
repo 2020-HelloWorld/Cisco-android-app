@@ -35,7 +35,7 @@ class ContactsCont extends StatelessWidget {
                 children: [
                   Text("Name Here",
                       style: GoogleFonts.poppins(
-                          textStyle: TextStyle(fontWeight: FontWeight.w600))),
+                          textStyle: TextStyle(fontWeight: FontWeight.w700))),
                   Text("user_name",
                       style: GoogleFonts.poppins(
                           textStyle: TextStyle(fontWeight: FontWeight.w300))),

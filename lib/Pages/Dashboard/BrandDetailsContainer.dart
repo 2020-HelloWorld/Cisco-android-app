@@ -23,6 +23,30 @@ class BrandDetailsCont extends StatelessWidget {
           width: 312,
           height: 200.12,
           decoration: BoxDecoration(
+              boxShadow: [
+                BoxShadow(
+                  blurRadius: 30,
+                  offset: Offset(-28, -28),
+                  color: Colors.white,
+                ),
+                BoxShadow(
+                  blurRadius: 30,
+                  offset: Offset(28, 28),
+                  color: Color.fromRGBO(180, 193, 213, 0.6),
+                ),
+                // BoxShadow(
+                //   color: Colors.grey.withOpacity(0.5),
+                //   spreadRadius: 4,
+                //   blurRadius: 4,
+                //   offset: Offset(2.5, 2.5), // changes position of shadow
+                // ),
+                // BoxShadow(
+                //   color: Color(0xffFFFFFF),
+                //   spreadRadius: 2.5,
+                //   blurRadius: 2.5,
+                //   offset: Offset(-1.5, -1.5), // changes position of shadow
+                // ),
+              ],
               gradient: LinearGradient(
                   begin: Alignment.topCenter,
                   end: Alignment.bottomCenter,

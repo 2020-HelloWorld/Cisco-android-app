@@ -5,6 +5,7 @@ import 'package:firstpg/Pages/chat/bottombar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
 class BrandDetails extends StatefulWidget {
@@ -27,12 +28,13 @@ class _BrandDetailsState extends State<BrandDetails> {
           child: Column(
             children: [
               Padding(
-                padding: const EdgeInsets.only(top: 18),
+                padding: EdgeInsets.only(top: 18.h, left: 26.w),
                 child: Row(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
-                    SizedBox(width: 115),
+                    Icon(Icons.more_vert),
+                    SizedBox(width: 70.w),
                     Image.asset("assets/images/logo.png",
                         width: 145, height: 43),
                     //try providing asset img.
@@ -47,7 +49,7 @@ class _BrandDetailsState extends State<BrandDetails> {
               ),
               SizedBox(height: 30),
               Container(
-                width: 480,
+                width: 480.w,
                 child: ListTile(
                   leading: Icon(Icons.search),
                   title: TextFormField(
@@ -58,8 +60,22 @@ class _BrandDetailsState extends State<BrandDetails> {
                   trailing: Icon(Icons.filter_alt_rounded),
                 ),
                 decoration: BoxDecoration(
-                  color: Colors.white,
+                  //color: Colors.white,
                   borderRadius: BorderRadius.circular(20),
+                  boxShadow: [
+                    BoxShadow(
+                      color: Color(0xFF9E9E9E).withOpacity(0.5),
+                      spreadRadius: 1.5,
+                      blurRadius: 1.5,
+                      offset: Offset(-1.5, -1.5), // changes position of shadow
+                    ),
+                    BoxShadow(
+                      color: Color(0xffFFFFFF),
+                      spreadRadius: 0.2,
+                      blurRadius: 0.2,
+                      offset: Offset(1, 1), // changes position of shadow
+                    ),
+                  ],
                   gradient: LinearGradient(
                     colors: [Colors.grey.shade300, Colors.white10],
                     begin: Alignment.topCenter,
