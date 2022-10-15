@@ -1,6 +1,7 @@
 import 'package:firstpg/Pages/Dashboard/BrandDetailsContainer.dart';
 import 'package:firstpg/Pages/Dashboard/BrandDetailsImgs.dart';
 import 'package:firstpg/Pages/Dashboard/DashboardHeader.dart';
+import 'package:firstpg/Pages/chat/bottombar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -70,7 +71,7 @@ class _BrandDetailsState extends State<BrandDetails> {
               ),
               SizedBox(height: 31),
               Container(
-                height: 900,
+                //height: 900,
                 child: Column(
                   children: List.generate(infl.length, (index) {
                     return BrandDetailsCont(
@@ -90,6 +91,7 @@ class _BrandDetailsState extends State<BrandDetails> {
           ),
         ),
       ),
+      bottomNavigationBar: bottomappbar(),
     );
   }
 }

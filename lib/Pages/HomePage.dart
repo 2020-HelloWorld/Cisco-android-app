@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:sizer/sizer.dart';
 import './login/otp_login/otpPages/firstpage.dart';
 import './login/otp_login/otpPages/firstpage_new_user.dart';
 

@@ -16,6 +16,8 @@ class Profile extends StatefulWidget {
 class _ProfileState extends State<Profile> {
   @override
   Widget build(BuildContext context) {
+    double screenHeight = MediaQuery.of(context).size.height;
+    double screenWeight = MediaQuery.of(context).size.width;
     return Scaffold(
       backgroundColor: Color.fromARGB(255, 255, 255, 255),
       body: SafeArea(
@@ -26,11 +28,16 @@ class _ProfileState extends State<Profile> {
                 children: [
                   Stack(
                     children: [
-                      Image.network(
+                      // Image.network(
+                      //     fit: BoxFit.fill,
+                      //     width: 470,
+                      //     height: 166,
+                      //     'https://s3-alpha-sig.figma.com/img/4a05/4892/eb6f870de1b0fb28a5d392a4ad3736fe?Expires=1665964800&Signature=VCEPn5idqvd1uCeAFtYrt0O~nX~TQRvo4hkss6yZYZ7POSGSFW89FRW~BJ85q0hF4-532vhP-kHmGleY4Ih3EWYdsg2k-Ob9qYSxx0ONDn7s-UZK9kbHfcIUVgj2AjNuzRfR-rCCdL3ljrV5gnkrfoABKyYieHw-~WHJVW8aQluW~om7EjL1DSXcmQ48JZEztqvNf---8SrYvQXF0LswI6KSZopsy09wSVksyGUdpWacV4Fckvlvcil3ACwb3GtC0PnQcw5gxFt9PtG6rekrtrFxT3FRlIO7U3QdLzZK2CcfIBvBwAq4vJQKJleKAwsgQMsTIVhcEjcbtTwRuc6a9w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                      Image.asset(
                           fit: BoxFit.fill,
                           width: 470,
                           height: 166,
-                          'https://s3-alpha-sig.figma.com/img/4a05/4892/eb6f870de1b0fb28a5d392a4ad3736fe?Expires=1665964800&Signature=VCEPn5idqvd1uCeAFtYrt0O~nX~TQRvo4hkss6yZYZ7POSGSFW89FRW~BJ85q0hF4-532vhP-kHmGleY4Ih3EWYdsg2k-Ob9qYSxx0ONDn7s-UZK9kbHfcIUVgj2AjNuzRfR-rCCdL3ljrV5gnkrfoABKyYieHw-~WHJVW8aQluW~om7EjL1DSXcmQ48JZEztqvNf---8SrYvQXF0LswI6KSZopsy09wSVksyGUdpWacV4Fckvlvcil3ACwb3GtC0PnQcw5gxFt9PtG6rekrtrFxT3FRlIO7U3QdLzZK2CcfIBvBwAq4vJQKJleKAwsgQMsTIVhcEjcbtTwRuc6a9w__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                          'assets/images/purple_back.png'),
                       Padding(
                         padding:
                             const EdgeInsets.only(left: 26, top: 32, right: 17),
@@ -38,14 +45,19 @@ class _ProfileState extends State<Profile> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Icon(Icons.menu_rounded, color: Colors.black),
-                            Image.network(
-                              width: 145,
-                              height: 45,
-                              color: Colors.black,
-                              'https://s3-alpha-sig.figma.com/img/adbc/73d2/a83a90a76086b19a9b93e8b994b69e84?Expires=1665964800&Signature=Wz5lBFg1UxFXyMrF-jHZcBvRra~g6E-AGlJkaqrkZ1F66NWpIsekcsjRsN8URtWCCF-w3DpJhwGV41PZvNkN6eDJLGDOZLiUtHs0W3yRCUC-PpIJc2RmGzcXAFNLVOyvEbARUVYKUoVctK75LpyUwigYPCWf3sRb1g1jLetJiwv~zNfM4mA9BjLeNV4QEAU2jfCfhnF70Y2uOiCt-XQz76nHOhC1x~~JoAPZ9CIr637HtlZNXSbYX7mWrL6Vjr4AMRl-15J9ElRZr87VuOKnbPz2R1n0p-sLcGNeqT2ThV6dyj09YDtjXsi1guQVt~oR6wHiZYhrCWigTv3en2GonA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
-                              fit: BoxFit.cover,
-                            ),
-                            // Image.asset('Cisco-android-app/assets/images/logo.png'),
+                            // Image.network(
+                            //   width: 145,
+                            //   height: 45,
+                            //   color: Colors.black,
+                            //   'https://s3-alpha-sig.figma.com/img/adbc/73d2/a83a90a76086b19a9b93e8b994b69e84?Expires=1665964800&Signature=Wz5lBFg1UxFXyMrF-jHZcBvRra~g6E-AGlJkaqrkZ1F66NWpIsekcsjRsN8URtWCCF-w3DpJhwGV41PZvNkN6eDJLGDOZLiUtHs0W3yRCUC-PpIJc2RmGzcXAFNLVOyvEbARUVYKUoVctK75LpyUwigYPCWf3sRb1g1jLetJiwv~zNfM4mA9BjLeNV4QEAU2jfCfhnF70Y2uOiCt-XQz76nHOhC1x~~JoAPZ9CIr637HtlZNXSbYX7mWrL6Vjr4AMRl-15J9ElRZr87VuOKnbPz2R1n0p-sLcGNeqT2ThV6dyj09YDtjXsi1guQVt~oR6wHiZYhrCWigTv3en2GonA__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA',
+                            //   fit: BoxFit.cover,
+                            // ),
+                            Image.asset(
+                                width: 145,
+                                height: 45,
+                                // color: Colors.black,
+                                fit: BoxFit.cover,
+                                'assets/images/logo.png'),
                             Container(
                               width: 44,
                               height: 44,
@@ -63,7 +75,7 @@ class _ProfileState extends State<Profile> {
                   ),
                   Container(
                     width: 470,
-                    height: 900,
+                    // height: 900,
                     decoration: BoxDecoration(
                       color: Color(0xffEBF3FF),
                       borderRadius: BorderRadius.only(
@@ -117,14 +129,21 @@ class _ProfileState extends State<Profile> {
                                   child: Column(
                                     children: [
                                       Container(
-                                          height: 50,
-                                          width: 50,
-                                          //Asset img to be included
-                                          child: Image.network(
-                                              fit: BoxFit.cover,
-                                              width: 30,
-                                              height: 20,
-                                              'https://cdn-icons-png.flaticon.com/512/2190/2190466.png')),
+                                        height: 50,
+                                        width: 50,
+                                        //Asset img to be included
+                                        // child: Image.network(
+                                        //     fit: BoxFit.cover,
+                                        //     width: 30,
+                                        //     height: 20,
+                                        //     'https://cdn-icons-png.flaticon.com/512/2190/2190466.png'),
+                                        child: Image.asset(
+                                          fit: BoxFit.cover,
+                                          width: 30,
+                                          height: 20,
+                                          'assets/images/youtube.png',
+                                        ),
+                                      ),
                                       Text('5M',
                                           style: TextStyle(
                                             color: Color(0xff303944),
@@ -306,8 +325,10 @@ class _ProfileState extends State<Profile> {
                                   children: [
                                     CircleAvatar(
                                       radius: 31.31,
-                                      backgroundImage: NetworkImage(
-                                          'https://s3-alpha-sig.figma.com/img/0569/264e/154c17586878211fe2a0ef1e0bfbb579?Expires=1665964800&Signature=d~0VQRe-uM1X37DIqpfO45qmcXacldT2Bb4f5qx6m8dSFeQLExb2iBAr9ygkM9mHaaWtwI0Vfp~cEQ6XoBI5SaKZgz8aPenVqClLC06H8fOuLv--Sflolvm-XhYvHFHAZQ0y54f756P88hqgXOM37tW9qFxBA9KyCJMe~6956bQnAU3uMAGJGkxdm7-w~qdOSkSWoiKoL3TVkUWQMDZNPDijfQS92dZ~PotsSrTptlVNUoY0oOamPZlLq74pNkBaiO0xwoyVfjOvmPfN2AFiDrHvYa6kT7m8gWBm7aD1sfGiS4fF3kp8BnBcfow6hcQ0~ztxIwZV52ZPTJsNwr-xtg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                                      backgroundImage: AssetImage(
+                                          'assets/images/raashi_pfp.png'),
+                                      // backgroundImage: NetworkImage(
+                                      //     'https://s3-alpha-sig.figma.com/img/0569/264e/154c17586878211fe2a0ef1e0bfbb579?Expires=1665964800&Signature=d~0VQRe-uM1X37DIqpfO45qmcXacldT2Bb4f5qx6m8dSFeQLExb2iBAr9ygkM9mHaaWtwI0Vfp~cEQ6XoBI5SaKZgz8aPenVqClLC06H8fOuLv--Sflolvm-XhYvHFHAZQ0y54f756P88hqgXOM37tW9qFxBA9KyCJMe~6956bQnAU3uMAGJGkxdm7-w~qdOSkSWoiKoL3TVkUWQMDZNPDijfQS92dZ~PotsSrTptlVNUoY0oOamPZlLq74pNkBaiO0xwoyVfjOvmPfN2AFiDrHvYa6kT7m8gWBm7aD1sfGiS4fF3kp8BnBcfow6hcQ0~ztxIwZV52ZPTJsNwr-xtg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
                                     ),
                                     SizedBox(width: 10.44),
                                     Column(
@@ -337,15 +358,22 @@ class _ProfileState extends State<Profile> {
                                   bottomLeft: Radius.circular(26.09),
                                   bottomRight: Radius.circular(26.09),
                                 ),
-                                child: Image.network(
-                                    width: 304,
-                                    height: 224,
-                                    fit: BoxFit.none,
-                                    'https://s3-alpha-sig.figma.com/img/c834/4fe5/2b8b117b297ae179fef8fdf269044389?Expires=1665964800&Signature=c44GKlmPlvsJGnPBbNONQ-ilcRl-2a2-PrpuTDG2aQqYAXEZIVS8a6Xm0KxlyjWctY4EHxgWNsUlqRexnfxIRuejJ2sRPaS4eY0G1SSeaGFLCC3h9I~xwlmvcoN~Jg6ui8OKPH0x-whfmUR0rii7oOuhpgQPZ847-AjHwQm9YPfi4xgLMhr9lKcybjG2EIjlGThKYprFNvadiB3Ba4CzWQc9ckX8cYGkj97xyUWkW6OmaEQb4oeoomr37SBZ7HtoU6iaZWXxGSsokXiFhztJy5u2k-3uTn98Rph3mW270DV~S0OQCCcCvSPVuplEFk9hu0SSE1F80DXOIxApP4XS2A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                                child: Image.asset(
+                                  width: 304,
+                                  height: 224,
+                                  fit: BoxFit.none,
+                                  'assets/images/raashi_pic.png',
+                                ),
+                                // child: Image.network(
+                                //     width: 304,
+                                //     height: 224,
+                                //     fit: BoxFit.none,
+                                //     'https://s3-alpha-sig.figma.com/img/c834/4fe5/2b8b117b297ae179fef8fdf269044389?Expires=1665964800&Signature=c44GKlmPlvsJGnPBbNONQ-ilcRl-2a2-PrpuTDG2aQqYAXEZIVS8a6Xm0KxlyjWctY4EHxgWNsUlqRexnfxIRuejJ2sRPaS4eY0G1SSeaGFLCC3h9I~xwlmvcoN~Jg6ui8OKPH0x-whfmUR0rii7oOuhpgQPZ847-AjHwQm9YPfi4xgLMhr9lKcybjG2EIjlGThKYprFNvadiB3Ba4CzWQc9ckX8cYGkj97xyUWkW6OmaEQb4oeoomr37SBZ7HtoU6iaZWXxGSsokXiFhztJy5u2k-3uTn98Rph3mW270DV~S0OQCCcCvSPVuplEFk9hu0SSE1F80DXOIxApP4XS2A__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
                               )
                             ],
                           ),
                         ),
+                        SizedBox(height: 25),
                       ],
                     ),
                   ),
@@ -377,10 +405,10 @@ class _ProfileState extends State<Profile> {
                         backgroundColor: Colors.white,
                         child: CircleAvatar(
                           radius: 50,
-                          // backgroundImage: AssetImage(
-                          //     'Cisco-android-app/assets/images/ProfilePgDude.png'),
-                          backgroundImage: NetworkImage(
-                              'https://s3-alpha-sig.figma.com/img/b8f9/be02/68a6c513991732706d729694c537bd33?Expires=1665964800&Signature=KJQ~sCpZOPMF~lVFPxjRCDwh~~YEkHUXb9WYbYmRjl20x8mYKQz0FxmdlZCLi5Zd1sJsgkOQZ2BEkCOpfEtbKWrtTOeoPHpEkqpjPFjGYy-qVtvZoRNfC4KjS1cBW1z3JLEKFxGIKhhSCKzlHvQnTp5O88gxFXDogTqfBoaYIImfJjLAA5x6L-e-F6EyAdc0OcioV~hBhCQNleB0sj5xg5Vlov20yUh6uhW~SBIrA2NrLpOm2AwxfvnvR6AmMsC7IABLiMb89i7Z8rSapFmfz731N9uGNzMlZBGSdhD1~dD-x9EpuotGOGx8Dc5TNlYTtbQiFzZt-yvE5j8iADidHQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
+                          backgroundImage:
+                              AssetImage('assets/images/ProfilePgDude.png'),
+                          // backgroundImage: NetworkImage(
+                          //     'https://s3-alpha-sig.figma.com/img/b8f9/be02/68a6c513991732706d729694c537bd33?Expires=1665964800&Signature=KJQ~sCpZOPMF~lVFPxjRCDwh~~YEkHUXb9WYbYmRjl20x8mYKQz0FxmdlZCLi5Zd1sJsgkOQZ2BEkCOpfEtbKWrtTOeoPHpEkqpjPFjGYy-qVtvZoRNfC4KjS1cBW1z3JLEKFxGIKhhSCKzlHvQnTp5O88gxFXDogTqfBoaYIImfJjLAA5x6L-e-F6EyAdc0OcioV~hBhCQNleB0sj5xg5Vlov20yUh6uhW~SBIrA2NrLpOm2AwxfvnvR6AmMsC7IABLiMb89i7Z8rSapFmfz731N9uGNzMlZBGSdhD1~dD-x9EpuotGOGx8Dc5TNlYTtbQiFzZt-yvE5j8iADidHQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
                         ),
                       ),
                     ),
