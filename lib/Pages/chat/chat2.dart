@@ -425,12 +425,13 @@ class Chat2 extends StatelessWidget {
                   padding: EdgeInsets.only(left: 10, right: 10),
                   child: TextFormField(
                     decoration: InputDecoration(
-                      icon: Icon(
+                      prefixIcon: Icon(
                         FontAwesomeIcons.smile,
                         color: Colors.black,
                       ),
                       suffixIcon: Row(
                         mainAxisAlignment: MainAxisAlignment.end,
+                        mainAxisSize: MainAxisSize.min,
                         children: [
                           Icon(
                             FontAwesomeIcons.paperclip,
