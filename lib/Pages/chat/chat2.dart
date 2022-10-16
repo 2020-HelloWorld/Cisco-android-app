@@ -27,96 +27,90 @@ class _Chat2State extends State<Chat2> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Row(
-                //mainAxisAlignment: MainAxisAlignment.center,
+              Column(
+                // crossAxisAlignment: CrossAxisAlignment.stretch,
                 children: [
-                  Column(
-                    // crossAxisAlignment: CrossAxisAlignment.stretch,
-                    children: [
-                      SizedBox(
-                        height: 7,
+                  SizedBox(
+                    height: 7,
+                  ),
+                  Container(
+                    width: screenwidth * 0.98,
+                    child: Card(
+                      color: Color(0xffEBF3FF),
+                      elevation: 10,
+                      shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.only(
+                            bottomLeft: Radius.circular(40.0),
+                            bottomRight: Radius.circular(40.0)),
                       ),
-                      Container(
-                        width: screenwidth * 0.98,
-                        child: Card(
-                          color: Color(0xffEBF3FF),
-                          elevation: 10,
-                          shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.only(
-                                bottomLeft: Radius.circular(40.0),
-                                bottomRight: Radius.circular(40.0)),
+                      child: Column(
+                        //crossAxisAlignment: CrossAxisAlignment.stretch,
+                        // mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          SizedBox(
+                            height: 18,
                           ),
-                          child: Column(
-                            //crossAxisAlignment: CrossAxisAlignment.stretch,
-                            // mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              SizedBox(
-                                height: 18,
-                              ),
-                              Row(children: [
+                          Row(children: [
+                            SizedBox(
+                              width: 22,
+                            ),
+                            Stack(
+                              children: [
+                                CircleAvatar(
+                                  radius: 25,
+                                  backgroundImage:
+                                      AssetImage('assets/images/contact1.jpg'),
+                                ),
+                                Positioned(
+                                  top: 31,
+                                  left: 32,
+                                  child: Container(
+                                    margin: EdgeInsets.all(4),
+                                    width: 14,
+                                    height: 14,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                      color: Color.fromARGB(255, 63, 194, 67),
+                                    ),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            SizedBox(
+                              width: 24,
+                            ),
+                            Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Text("Name Here",
+                                    style: GoogleFonts.poppins(
+                                        textStyle: TextStyle(
+                                            fontWeight: FontWeight.w600))),
                                 SizedBox(
-                                  width: 22,
+                                  height: 7,
                                 ),
-                                Stack(
-                                  children: [
-                                    CircleAvatar(
-                                      radius: 25,
-                                      backgroundImage: AssetImage(
-                                          'assets/images/contact1.jpg'),
-                                    ),
-                                    Positioned(
-                                      top: 31,
-                                      left: 32,
-                                      child: Container(
-                                        margin: EdgeInsets.all(4),
-                                        width: 14,
-                                        height: 14,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          color:
-                                              Color.fromARGB(255, 63, 194, 67),
-                                        ),
-                                      ),
-                                    ),
-                                  ],
+                                Text(
+                                  "user_name",
+                                  style: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
+                                          fontWeight: FontWeight.w300)),
                                 ),
-                                SizedBox(
-                                  width: 24,
-                                ),
-                                Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
-                                  children: [
-                                    Text("Name Here",
-                                        style: GoogleFonts.poppins(
-                                            textStyle: TextStyle(
-                                                fontWeight: FontWeight.w600))),
-                                    SizedBox(
-                                      height: 7,
-                                    ),
-                                    Text(
-                                      "user_name",
-                                      style: GoogleFonts.poppins(
-                                          textStyle: TextStyle(
-                                              fontWeight: FontWeight.w300)),
-                                    ),
-                                  ],
-                                ),
-                                SizedBox(width: 146.5),
-                                Icon(
-                                  Icons.more_vert,
-                                  color: Color.fromARGB(255, 155, 117, 220),
-                                  size: 32,
-                                ),
-                              ]),
-                              SizedBox(
-                                height: 19,
-                              ),
-                            ],
+                              ],
+                            ),
+                            SizedBox(width: 146.5),
+                            Icon(
+                              Icons.more_vert,
+                              color: Color.fromARGB(255, 155, 117, 220),
+                              size: 32,
+                            ),
+                          ]),
+                          SizedBox(
+                            height: 19,
                           ),
-                        ),
+                        ],
                       ),
-                    ],
-                  )
+                    ),
+                  ),
                 ],
               ),
               SizedBox(
