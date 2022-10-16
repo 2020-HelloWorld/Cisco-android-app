@@ -15,7 +15,7 @@ import 'Pages/login/otp_login/myHomePage.dart';
 import 'Pages/login/otp_login/otpPages/firstpage.dart';
 
 void main() {
-  runApp(DevicePreview(enabled: true, builder: (context) => const MyApp()));
+  runApp(const MyApp());
 }
 
 class MyApp extends StatelessWidget {
