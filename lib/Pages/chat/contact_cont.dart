@@ -1,4 +1,5 @@
 import 'package:firstpg/Pages/chat/chat2.dart';
+import 'package:firstpg/Pages/chat/chat3.dart';
 import 'package:firstpg/Pages/chat/contact_list.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -19,7 +20,7 @@ class ContactsCont extends StatelessWidget {
       GestureDetector(
         onTap: () {
           Navigator.push(
-              context, MaterialPageRoute(builder: (context) => Chat2()));
+              context, MaterialPageRoute(builder: (context) => Chat3()));
         },
         child: Container(
           color: Colors.transparent,
