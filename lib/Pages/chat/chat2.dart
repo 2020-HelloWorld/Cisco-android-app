@@ -1,15 +1,25 @@
 import 'package:firstpg/Pages/chat/bottombar.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
-class Chat2 extends StatelessWidget {
+bool showTextField = false;
+
+class Chat2 extends StatefulWidget {
   const Chat2({Key? key}) : super(key: key);
+
+  @override
+  State<Chat2> createState() => _Chat2State();
+}
+
+class _Chat2State extends State<Chat2> {
   @override
   Widget build(BuildContext context) {
     double screenheight = MediaQuery.of(context).size.height;
     double screenwidth = MediaQuery.of(context).size.width;
+
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: SafeArea(
@@ -412,70 +422,228 @@ class Chat2 extends StatelessWidget {
               SizedBox(
                 height: screenheight * 0.04,
               ),
-              Neumorphic(
-                margin: EdgeInsets.all(10),
-                style: NeumorphicStyle(
-                    shape: NeumorphicShape.concave,
-                    boxShape:
-                        NeumorphicBoxShape.roundRect(BorderRadius.circular(10)),
-                    depth: -7,
-                    lightSource: LightSource.topLeft,
-                    color: Color(0xffEBF3FF)),
-                child: Container(
-                  padding: EdgeInsets.only(left: 10, right: 10),
-                  child: TextFormField(
-                    decoration: InputDecoration(
-                      icon: Icon(
-                        FontAwesomeIcons.smile,
-                        color: Colors.black,
-                      ),
-                      suffixIcon: Row(
-                        mainAxisAlignment: MainAxisAlignment.end,
-                        children: [
-                          Icon(
-                            FontAwesomeIcons.paperclip,
-                            color: Colors.black,
-                          ),
-                          SizedBox(
-                            width: 6,
-                          ),
-                          Icon(FontAwesomeIcons.microphone,
-                              color: Colors.black),
-                        ],
-                      ),
+              Container(
+                child: showTextField ? MsgBarType() : MsgBarNone(),
+              )
+              // GestureDetector(
+              //   onTap: () {
+              //     Pressed();
+              //     debugPrint(keyboard.toString());
+              //     // keyboard ? MsgBarType() : MsgBarNone();
+              //   },
+              //   child: keyboard ? MsgBarType() : Container(),
+              // )
+              // Neumorphic(
+              //   margin: EdgeInsets.all(10),
+              //   style: NeumorphicStyle(
+              //       shape: NeumorphicShape.concave,
+              //       boxShape:
+              //           NeumorphicBoxShape.roundRect(BorderRadius.circular(10)),
+              //       depth: -7,
+              //       lightSource: LightSource.topLeft,
+              //       color: Color(0xffEBF3FF)),
+              //   child: Container(
+              //     padding: EdgeInsets.only(left: 10, right: 10),
+              //     child: TextFormField(
+              //       decoration: InputDecoration(
+              //         icon: Icon(
+              //           FontAwesomeIcons.smile,
+              //           color: Colors.black,
+              //         ),
+              //         suffixIcon: Row(
+              //           mainAxisAlignment: MainAxisAlignment.end,
+              //           children: [
+              //             Icon(
+              //               FontAwesomeIcons.paperclip,
+              //               color: Colors.black,
+              //             ),
+              //             SizedBox(
+              //               width: 6,
+              //             ),
+              //             Icon(FontAwesomeIcons.microphone,
+              //                 color: Colors.black),
+              //           ],
+              //         ),
 
-                      border: InputBorder.none,
-                      //labelText: "Enter the Brand Name",
-                      hintText: "Type here...",
-                      hintStyle: GoogleFonts.poppins(
-                          textStyle: TextStyle(
-                        //   color: Color(0xff2F3843),
-                        fontWeight: FontWeight.w400,
-                        fontSize: 15,
-                      )),
-                    ),
+              //         border: InputBorder.none,
+              //         //labelText: "Enter the Brand Name",
+              //         hintText: "Type here...",
+              //         hintStyle: GoogleFonts.poppins(
+              //             textStyle: TextStyle(
+              //           //   color: Color(0xff2F3843),
+              //           fontWeight: FontWeight.w400,
+              //           fontSize: 15,
+              //         )),
+              //       ),
 
-                    //controller: _username,
-                  ),
-                  decoration: BoxDecoration(
-                    color: Color(0xffEBF3FF),
-                    // border: Border.all(color: Colors.black),
-                    borderRadius: BorderRadius.circular(10),
-                    gradient: LinearGradient(
-                      colors: [Colors.grey.shade300, Colors.white10],
-                      begin: Alignment.topCenter,
-                      end: Alignment.bottomCenter,
-                      stops: [0.0, 0.4],
-                      tileMode: TileMode.clamp,
-                    ),
-                  ),
-                ),
-              ),
+              //       //controller: _username,
+              //     ),
+              //     decoration: BoxDecoration(
+              //       color: Color(0xffEBF3FF),
+              //       // border: Border.all(color: Colors.black),
+              //       borderRadius: BorderRadius.circular(10),
+              //       gradient: LinearGradient(
+              //         colors: [Colors.grey.shade300, Colors.white10],
+              //         begin: Alignment.topCenter,
+              //         end: Alignment.bottomCenter,
+              //         stops: [0.0, 0.4],
+              //         tileMode: TileMode.clamp,
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
       ),
       bottomNavigationBar: bottomappbar(),
+    );
+  }
+
+  Widget MsgBarNone() {
+    return Neumorphic(
+      margin: EdgeInsets.all(10),
+      style: NeumorphicStyle(
+          shape: NeumorphicShape.concave,
+          boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(10)),
+          depth: -7,
+          lightSource: LightSource.topLeft,
+          color: Color(0xffEBF3FF)),
+      child: Container(
+        padding: EdgeInsets.only(left: 10, right: 10),
+        height: 47.h,
+        child: Row(
+          children: [
+            Icon(
+              FontAwesomeIcons.smile,
+              color: Colors.black,
+            ),
+            InkWell(
+              onTap: () {
+                setState(() {
+                  showTextField = true;
+                });
+              },
+              child: Container(
+                color: Colors.transparent,
+                width: 254.w,
+              ),
+            ),
+            Icon(
+              FontAwesomeIcons.paperclip,
+              color: Colors.black,
+            ),
+            SizedBox(
+              width: 6.w,
+            ),
+            Icon(FontAwesomeIcons.microphone, color: Colors.black),
+          ],
+        ),
+        // child: TextFormField(
+        //   decoration: InputDecoration(
+        //     prefixIcon: Icon(
+        //       FontAwesomeIcons.smile,
+        //       color: Colors.black,
+        //     ),
+        //     suffixIcon: Row(
+        //       mainAxisAlignment: MainAxisAlignment.end,
+        //       mainAxisSize: MainAxisSize.min,
+        //       children: [
+        //         Icon(
+        //           FontAwesomeIcons.paperclip,
+        //           color: Colors.black,
+        //         ),
+        //         SizedBox(
+        //           width: 6,
+        //         ),
+        //         Icon(FontAwesomeIcons.microphone, color: Colors.black),
+        //       ],
+        //     ),
+
+        //     border: InputBorder.none,
+        //     //labelText: "Enter the Brand Name",
+        //     hintText: "Type here...",
+        //     hintStyle: GoogleFonts.poppins(
+        //         textStyle: TextStyle(
+        //       //   color: Color(0xff2F3843),
+        //       fontWeight: FontWeight.w400,
+        //       fontSize: 15,
+        //     )),
+        //   ),
+
+        //   //controller: _username,
+        // ),
+        decoration: BoxDecoration(
+          color: Color(0xffEBF3FF),
+          // border: Border.all(color: Colors.black),
+          borderRadius: BorderRadius.circular(10),
+          gradient: LinearGradient(
+            colors: [Colors.grey.shade300, Colors.white10],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.0, 0.4],
+            tileMode: TileMode.clamp,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget MsgBarType() {
+    return Neumorphic(
+      margin: EdgeInsets.all(10),
+      style: NeumorphicStyle(
+          shape: NeumorphicShape.concave,
+          boxShape: NeumorphicBoxShape.roundRect(BorderRadius.circular(10)),
+          depth: -7,
+          lightSource: LightSource.topLeft,
+          color: Color(0xffEBF3FF)),
+      child: Container(
+        padding: EdgeInsets.only(left: 10, right: 10),
+        child: InkWell(
+          onDoubleTap: () {
+            setState(() {
+              showTextField = false;
+            });
+          },
+          child: TextFormField(
+            decoration: InputDecoration(
+              prefixIcon: Icon(
+                FontAwesomeIcons.paperclip,
+                color: Colors.black,
+              ),
+              suffixIcon: Icon(
+                Icons.send,
+                color: Colors.black,
+              ),
+
+              border: InputBorder.none,
+              //labelText: "Enter the Brand Name",
+              hintText: "Type here...",
+              hintStyle: GoogleFonts.poppins(
+                  textStyle: TextStyle(
+                //   color: Color(0xff2F3843),
+                fontWeight: FontWeight.w400,
+                fontSize: 15,
+              )),
+            ),
+
+            //controller: _username,
+          ),
+        ),
+        decoration: BoxDecoration(
+          color: Color(0xffEBF3FF),
+          // border: Border.all(color: Colors.black),
+          borderRadius: BorderRadius.circular(10),
+          gradient: LinearGradient(
+            colors: [Colors.grey.shade300, Colors.white10],
+            begin: Alignment.topCenter,
+            end: Alignment.bottomCenter,
+            stops: [0.0, 0.4],
+            tileMode: TileMode.clamp,
+          ),
+        ),
+      ),
     );
   }
 }

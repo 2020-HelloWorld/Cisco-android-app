@@ -4,6 +4,7 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
 import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
+import 'package:firstpg/Pages/chat/chat2.dart';
 import 'package:firstpg/Pages/chat/chat_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -26,7 +27,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: 'Poppins'),
-          home: HomePage() //MyHomePage(title: 'Hello',),
+          home: Chat2() //HomePage() //MyHomePage(title: 'Hello',),
           ),
       designSize: const Size(375, 812),
     );

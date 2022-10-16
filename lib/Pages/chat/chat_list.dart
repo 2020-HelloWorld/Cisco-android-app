@@ -55,7 +55,6 @@ class _ContactListState extends State<ContactList> {
                     decoration: InputDecoration(
                       suffixIcon: Icon(Icons.search, color: Color(0xff5C5858)),
                       border: InputBorder.none,
-                      // labelText: "Enter the Brand Name",
                       hintText: 'search',
                     ),
                     // controller: _username,
