@@ -1,4 +1,5 @@
 import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
+import 'package:firstpg/Pages/chat/bottombar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 
@@ -124,6 +125,7 @@ class BrandDashboard extends StatelessWidget {
           ),
         ],
       )),
+      bottomNavigationBar: bottomappbar(),
     );
   }
 }

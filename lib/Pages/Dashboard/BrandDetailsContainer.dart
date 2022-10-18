@@ -128,7 +128,8 @@ class BrandDetailsCont extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 55),
                         child: Container(
-                          width: 118,
+                          //removed width...cuz it was causing problems
+                          // width: 118.w,
                           height: 19,
                           child: Text(infl[index]["Tag1"],
                               style: GoogleFonts.poppins(

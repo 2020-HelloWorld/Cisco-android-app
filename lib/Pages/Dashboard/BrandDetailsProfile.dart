@@ -158,12 +158,12 @@ class _ProfileState extends State<Profile> {
                                   padding: EdgeInsets.only(top: 28.h),
                                   child: Column(
                                     children: [
-                                      Text('Ellie Christensen',
+                                      Text('Virat Singh',
                                           style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w800,
                                             fontSize: 20.sp,
                                           )),
-                                      Text('Female | 24 | London ',
+                                      Text('Male | 34 | Dehli ',
                                           style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w400,
                                             fontSize: 14.sp,
@@ -406,7 +406,7 @@ class _ProfileState extends State<Profile> {
                         child: CircleAvatar(
                           radius: 50,
                           backgroundImage:
-                              AssetImage('assets/images/ProfilePgDude.png'),
+                              AssetImage('assets/images/ProfilePageDude.jpg'),
                           // backgroundImage: NetworkImage(
                           //     'https://s3-alpha-sig.figma.com/img/b8f9/be02/68a6c513991732706d729694c537bd33?Expires=1665964800&Signature=KJQ~sCpZOPMF~lVFPxjRCDwh~~YEkHUXb9WYbYmRjl20x8mYKQz0FxmdlZCLi5Zd1sJsgkOQZ2BEkCOpfEtbKWrtTOeoPHpEkqpjPFjGYy-qVtvZoRNfC4KjS1cBW1z3JLEKFxGIKhhSCKzlHvQnTp5O88gxFXDogTqfBoaYIImfJjLAA5x6L-e-F6EyAdc0OcioV~hBhCQNleB0sj5xg5Vlov20yUh6uhW~SBIrA2NrLpOm2AwxfvnvR6AmMsC7IABLiMb89i7Z8rSapFmfz731N9uGNzMlZBGSdhD1~dD-x9EpuotGOGx8Dc5TNlYTtbQiFzZt-yvE5j8iADidHQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
                         ),
