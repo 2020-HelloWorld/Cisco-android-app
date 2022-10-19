@@ -72,7 +72,7 @@ class _Chat3State extends State<Chat3> {
                   height: 7,
                 ),
                 Container(
-                  width: screenwidth * 0.98,
+                  //width: screenwidth * 0.98,
                   child: Card(
                     color: Color(0xffEBF3FF),
                     elevation: 10,
@@ -97,7 +97,7 @@ class _Chat3State extends State<Chat3> {
                               CircleAvatar(
                                 radius: 25,
                                 backgroundImage:
-                                    AssetImage('assets/images/contact1.jpg'),
+                                    AssetImage('assets/images/Ellie2.png'),
                               ),
                               Positioned(
                                 top: 31,
@@ -120,7 +120,7 @@ class _Chat3State extends State<Chat3> {
                           Column(
                             crossAxisAlignment: CrossAxisAlignment.start,
                             children: [
-                              Text("Name Here",
+                              Text("Akshata Gupta",
                                   style: GoogleFonts.poppins(
                                       textStyle: TextStyle(
                                           fontWeight: FontWeight.w600))),
@@ -128,7 +128,7 @@ class _Chat3State extends State<Chat3> {
                                 height: 7,
                               ),
                               Text(
-                                "user_name",
+                                "@gupta_09",
                                 style: GoogleFonts.poppins(
                                     textStyle:
                                         TextStyle(fontWeight: FontWeight.w300)),
@@ -450,7 +450,7 @@ class SenderWidget extends StatelessWidget {
               ),
               CircleAvatar(
                 radius: 16,
-                backgroundImage: AssetImage('assets/images/contact1.jpg'),
+                backgroundImage: AssetImage('assets/images/Ellie2.png'),
               ),
               SizedBox(
                 width: 28,

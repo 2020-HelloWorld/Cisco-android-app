@@ -1,4 +1,5 @@
 import 'package:firstpg/Pages/chat/bottombar.dart';
+import 'package:firstpg/Pages/chat/chat3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -158,12 +159,12 @@ class _ProfileState extends State<Profile> {
                                   padding: EdgeInsets.only(top: 28.h),
                                   child: Column(
                                     children: [
-                                      Text('Virat Singh',
+                                      Text('Akshata Gupta',
                                           style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w800,
                                             fontSize: 20.sp,
                                           )),
-                                      Text('Male | 34 | Dehli ',
+                                      Text('Female | 24 | Bengaluru ',
                                           style: GoogleFonts.poppins(
                                             fontWeight: FontWeight.w400,
                                             fontSize: 14.sp,
@@ -195,7 +196,7 @@ class _ProfileState extends State<Profile> {
                                               context,
                                               MaterialPageRoute(
                                                   builder: (context) =>
-                                                      ContactList()));
+                                                      Chat3()));
                                         },
                                       )
                                     ],
@@ -235,7 +236,7 @@ class _ProfileState extends State<Profile> {
                                   children: [
                                     Icon(FontAwesomeIcons.instagram,
                                         size: 28.5),
-                                    Text('250K',
+                                    Text('50K',
                                         style: GoogleFonts.poppins(
                                           color: Color(0xff303944),
                                           fontSize: 24.sp,
@@ -272,7 +273,7 @@ class _ProfileState extends State<Profile> {
                                     size: 28.5.sp,
                                     //color: Colors.white,
                                   ),
-                                  Text('150K',
+                                  Text('30K',
                                       style: GoogleFonts.poppins(
                                         color: Color(0xff303944),
                                         fontSize: 24.sp,
@@ -326,20 +327,20 @@ class _ProfileState extends State<Profile> {
                                     CircleAvatar(
                                       radius: 31.31,
                                       backgroundImage: AssetImage(
-                                          'assets/images/raashi_pfp.png'),
+                                          'assets/images/Ellie2.png'),
                                       // backgroundImage: NetworkImage(
                                       //     'https://s3-alpha-sig.figma.com/img/0569/264e/154c17586878211fe2a0ef1e0bfbb579?Expires=1665964800&Signature=d~0VQRe-uM1X37DIqpfO45qmcXacldT2Bb4f5qx6m8dSFeQLExb2iBAr9ygkM9mHaaWtwI0Vfp~cEQ6XoBI5SaKZgz8aPenVqClLC06H8fOuLv--Sflolvm-XhYvHFHAZQ0y54f756P88hqgXOM37tW9qFxBA9KyCJMe~6956bQnAU3uMAGJGkxdm7-w~qdOSkSWoiKoL3TVkUWQMDZNPDijfQS92dZ~PotsSrTptlVNUoY0oOamPZlLq74pNkBaiO0xwoyVfjOvmPfN2AFiDrHvYa6kT7m8gWBm7aD1sfGiS4fF3kp8BnBcfow6hcQ0~ztxIwZV52ZPTJsNwr-xtg__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
                                     ),
                                     SizedBox(width: 10.44.w),
                                     Column(
                                       children: [
-                                        Text('Raashi hegde',
+                                        Text('Akshata Gupta',
                                             style: GoogleFonts.poppins(
                                               color: Color(0xff303944),
                                               fontSize: 11.31.sp,
                                               fontWeight: FontWeight.w600,
                                             )),
-                                        Text('@raash_09',
+                                        Text('@gupta_09',
                                             style: GoogleFonts.poppins(
                                               color: Color(0xff303944),
                                               fontSize: 9.57.sp,
@@ -406,7 +407,7 @@ class _ProfileState extends State<Profile> {
                         child: CircleAvatar(
                           radius: 50,
                           backgroundImage:
-                              AssetImage('assets/images/ProfilePageDude.jpg'),
+                              AssetImage('assets/images/Ellie2.png'),
                           // backgroundImage: NetworkImage(
                           //     'https://s3-alpha-sig.figma.com/img/b8f9/be02/68a6c513991732706d729694c537bd33?Expires=1665964800&Signature=KJQ~sCpZOPMF~lVFPxjRCDwh~~YEkHUXb9WYbYmRjl20x8mYKQz0FxmdlZCLi5Zd1sJsgkOQZ2BEkCOpfEtbKWrtTOeoPHpEkqpjPFjGYy-qVtvZoRNfC4KjS1cBW1z3JLEKFxGIKhhSCKzlHvQnTp5O88gxFXDogTqfBoaYIImfJjLAA5x6L-e-F6EyAdc0OcioV~hBhCQNleB0sj5xg5Vlov20yUh6uhW~SBIrA2NrLpOm2AwxfvnvR6AmMsC7IABLiMb89i7Z8rSapFmfz731N9uGNzMlZBGSdhD1~dD-x9EpuotGOGx8Dc5TNlYTtbQiFzZt-yvE5j8iADidHQ__&Key-Pair-Id=APKAINTVSUGEWH5XD5UA'),
                         ),

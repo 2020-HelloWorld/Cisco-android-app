@@ -1,7 +1,9 @@
+import 'package:firstpg/Pages/Dashboard/BrandDashboardImgs.dart';
 import 'package:flutter/material.dart';
 
 class HorizontalList extends StatelessWidget {
-  const HorizontalList({Key? key}) : super(key: key);
+  String choice;
+  HorizontalList({Key? key, required this.choice}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -9,7 +11,7 @@ class HorizontalList extends StatelessWidget {
       padding: EdgeInsets.only(left: 15),
       height: 175,
       child: ListView.builder(
-          itemCount: 10,
+          itemCount: 6,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Stack(children: [
@@ -26,8 +28,11 @@ class HorizontalList extends StatelessWidget {
                   child: FittedBox(
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(10),
-                      child: Image.network(
-                          "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwMTRVUGAGKSV-zYdlhlGBx3pUsnWZhcyQBA&usqp=CAU"),
+                      child: (choice == "Trending"
+                          ? Image.asset(infT[index]["icon"])
+                          : Image.asset(infTop[index]["icon"])),
+                      // child: Image.network(
+                      //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwMTRVUGAGKSV-zYdlhlGBx3pUsnWZhcyQBA&usqp=CAU"),
                     ),
                     fit: BoxFit.fill,
                   ),
@@ -46,7 +51,9 @@ class HorizontalList extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 4.0),
                         child: Text(
-                          "9",
+                          (choice == "Trending"
+                              ? infT[index]["Stars"]
+                              : infTop[index]["Stars"]),
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -77,7 +84,9 @@ class HorizontalList extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.only(left: 8.0),
                         child: Text(
-                          "110K",
+                          (choice == "Trending"
+                              ? infT[index]["followers"]
+                              : infTop[index]["followers"]),
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,

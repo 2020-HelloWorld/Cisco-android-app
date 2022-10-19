@@ -13,6 +13,7 @@ class BrandDashboard extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenWidth = MediaQuery.of(context).size.width;
     double screenHeight = MediaQuery.of(context).size.height;
+    String t;
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: SingleChildScrollView(
@@ -75,7 +76,7 @@ class BrandDashboard extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              "Trending",
+              t = "Trending",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
             ),
             trailing: IconButton(
@@ -86,13 +87,13 @@ class BrandDashboard extends StatelessWidget {
               },
             ),
           ),
-          HorizontalList(),
+          HorizontalList(choice: t),
           SizedBox(
             height: screenHeight * 0.03,
           ),
           ListTile(
             title: Text(
-              "Top Performing",
+              t = "Top Performing",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
             ),
             trailing: IconButton(
@@ -102,13 +103,13 @@ class BrandDashboard extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => BrandDetails()));
                 }),
           ),
-          HorizontalList(),
+          HorizontalList(choice: t),
           SizedBox(
             height: 50,
           ),
           ListTile(
             title: Text(
-              "Trending",
+              t = "Trending",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
             ),
             trailing: IconButton(
@@ -119,7 +120,7 @@ class BrandDashboard extends StatelessWidget {
               },
             ),
           ),
-          HorizontalList(),
+          HorizontalList(choice: t),
           SizedBox(
             height: 50,
           ),
