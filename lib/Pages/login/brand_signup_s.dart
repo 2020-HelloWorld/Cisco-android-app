@@ -1,4 +1,7 @@
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, use_build_context_synchronously
+
 import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
+import 'package:firstpg/services/firebase_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -7,13 +10,23 @@ import './brand_signup.dart';
 import './brand_details.dart';
 
 class LoginPage extends StatefulWidget {
-  const LoginPage({Key? key}) : super(key: key);
+  LoginPage({Key? key}) : super(key: key);
 
   @override
   State<LoginPage> createState() => _LoginPageState();
 }
 
 class _LoginPageState extends State<LoginPage> {
+  // Text controllers to store data
+  TextEditingController _brandName = TextEditingController();
+  TextEditingController _gstNumber = TextEditingController();
+  TextEditingController _year = TextEditingController();
+  TextEditingController _about = TextEditingController();
+  bool isLoading = false;
+
+  // firebase services variables
+  var _services = FirebaseServices();
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -95,6 +108,7 @@ class _LoginPageState extends State<LoginPage> {
                               child: Container(
                                 padding: EdgeInsets.all(2),
                                 child: TextFormField(
+                                  controller: _brandName,
                                   decoration: InputDecoration(
                                       icon: Icon(Icons.person),
                                       border: InputBorder.none,
@@ -144,6 +158,7 @@ class _LoginPageState extends State<LoginPage> {
                                     width: 179.5,
                                     // margin: EdgeInsets.all(10),
                                     child: TextFormField(
+                                      controller: _gstNumber,
                                       textAlign: TextAlign.left,
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -185,6 +200,7 @@ class _LoginPageState extends State<LoginPage> {
                                     padding: EdgeInsets.only(left: 7),
                                     width: 100,
                                     child: TextFormField(
+                                      controller: _year,
                                       textAlign: TextAlign.left,
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -232,6 +248,7 @@ class _LoginPageState extends State<LoginPage> {
                                 height: 100,
                                 // margin: EdgeInsets.all(10),
                                 child: TextFormField(
+                                  controller: _about,
                                   minLines: 1,
                                   maxLines: 3,
                                   // allow user to enter 3 lines in textfield
@@ -280,16 +297,45 @@ class _LoginPageState extends State<LoginPage> {
                                 height: 60,
                                 width: 200,
                                 child: TextButton(
-                                  child: Text(
-                                    "Continue",
-                                    style: GoogleFonts.poppins(
-                                        textStyle: TextStyle(
-                                      color: Color(0xff2F3843),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                    )),
-                                  ),
-                                  onPressed: () {
+                                  child: isLoading
+                                      ? CircularProgressIndicator()
+                                      : Text(
+                                          "Continue",
+                                          style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
+                                            color: Color(0xff2F3843),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 15,
+                                          )),
+                                        ),
+                                  onPressed: () async {
+                                    // Updating the database finally before navigating to the next page
+                                    setState(() => isLoading = true);
+
+                                    if (_brandName.text.trim() == "" ||
+                                        _gstNumber.text.trim() == "" ||
+                                        _year.text.trim() == "" ||
+                                        _about.text.trim() == "") {
+                                      debugPrint("Please enter valid details");
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                              "Please enter valid details"),
+                                        ),
+                                      );
+                                      setState(() => isLoading = false);
+                                      return;
+                                    }
+
+                                    await _services.insertNextBrandDetails(
+                                        _brandName.text.trim(),
+                                        _gstNumber.text.trim(),
+                                        _year.text.trim(),
+                                        _about.text.trim());
+
+                                    setState(() => isLoading = false);
+
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(

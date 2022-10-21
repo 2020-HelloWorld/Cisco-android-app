@@ -1,4 +1,7 @@
+// ignore_for_file: prefer_const_constructors, sort_child_properties_last, use_build_context_synchronously
+
 import 'package:firstpg/Pages/login/signup.dart';
+import 'package:firstpg/services/firebase_services.dart';
 import 'package:flutter/material.dart';
 
 import '../Dashboard/DashboardTest.dart';
@@ -20,6 +23,10 @@ class _BrandSignupState extends State<BrandSignup> {
   TextEditingController _password = new TextEditingController();
   TextEditingController _password2 = new TextEditingController();
   bool? terms = false;
+  bool isLoading = false;
+
+  // Firebase services variables
+  var _service = FirebaseServices();
 
   Future<void> signup() async {
     print(_username.text);
@@ -171,26 +178,81 @@ class _BrandSignupState extends State<BrandSignup> {
                   height: 60,
                   width: 200,
                   child: TextButton(
-                    child: Text(
-                      "Sign Up",
-                      style: TextStyle(
-                          fontWeight: FontWeight.bold, color: Colors.black),
-                    ),
-                    onPressed: () {
+                    child: isLoading
+                        ? CircularProgressIndicator()
+                        : Text(
+                            "Sign Up",
+                            style: TextStyle(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black),
+                          ),
+                    onPressed: () async {
+                      setState(() => isLoading = true);
+
                       if (_username.text != "" &&
                           _email.text != "" &&
                           _password.text != "" &&
                           _password2.text == _password.text) {
                         if (this.terms == false) {
-                          print("Agree to terms and condition");
+                          debugPrint("Agree to terms and condition");
+
+                          ScaffoldMessenger.of(context).showSnackBar(
+                            SnackBar(
+                              content:
+                                  Text("Please Agree to terms and conditions"),
+                              duration: Duration(milliseconds: 800),
+                            ),
+                          );
+
+                          setState(() => isLoading = false);
                         } else {
+                          // Updating database before navigating to next page.
+
+                          var error = await _service.signUpWithEmailAndPassword(
+                              _email.text, _password2.text);
+
+                          if (error != true) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(error.toString()),
+                              ),
+                            );
+                            setState(() => isLoading = false);
+                            return;
+                          }
+
+                          var error1 = await _service.insertInitialData(
+                              "brand", _email.text, _username.text);
+
+                          if (error1 != true) {
+                            ScaffoldMessenger.of(context).showSnackBar(
+                              SnackBar(
+                                content: Text(
+                                    "An error has occured... please try again"),
+                                duration: Duration(milliseconds: 800),
+                              ),
+                            );
+                            setState(() => isLoading = false);
+                            return;
+                          }
+
+                          setState(() => isLoading = false);
+
                           Navigator.push(
                               context,
                               MaterialPageRoute(
                                   builder: (context) => LoginPage()));
                         }
                       } else {
-                        print("Enter Valid Information");
+                        debugPrint("Enter Valid Information");
+                        ScaffoldMessenger.of(context).showSnackBar(
+                          SnackBar(
+                            content: Text("Please Enter Valid Information"),
+                            duration: Duration(milliseconds: 800),
+                          ),
+                        );
+
+                        setState(() => isLoading = false);
                       }
                     },
                   ),

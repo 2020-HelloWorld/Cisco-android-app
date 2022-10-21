@@ -1,3 +1,6 @@
+// ignore_for_file: sort_child_properties_last, prefer_const_constructors, use_build_context_synchronously
+
+import 'package:firstpg/services/firebase_services.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
@@ -14,8 +17,14 @@ class LoginPage1 extends StatefulWidget {
 }
 
 class _LoginPage1State extends State<LoginPage1> {
-  @override
   TextEditingController _date = TextEditingController();
+  TextEditingController _name = TextEditingController();
+  TextEditingController _gender = TextEditingController();
+  TextEditingController _bio = TextEditingController();
+  bool isLoading = false;
+
+  // Firebase services
+  var _services = FirebaseServices();
 
   @override
   Widget build(BuildContext context) {
@@ -98,16 +107,19 @@ class _LoginPage1State extends State<LoginPage1> {
                               child: Container(
                                 padding: EdgeInsets.all(2),
                                 child: TextFormField(
+                                  controller: _name,
                                   decoration: InputDecoration(
-                                      icon: Icon(Icons.person),
-                                      border: InputBorder.none,
-                                      labelText: "Name",
-                                      hintStyle: GoogleFonts.poppins(
-                                          textStyle: TextStyle(
+                                    icon: Icon(Icons.person),
+                                    border: InputBorder.none,
+                                    labelText: "Name",
+                                    hintStyle: GoogleFonts.poppins(
+                                      textStyle: TextStyle(
                                         color: Color(0xff2F3843),
                                         fontWeight: FontWeight.w200,
                                         fontSize: 15,
-                                      ))),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 decoration: BoxDecoration(
                                   color: Color(0xffEBF3FF),
@@ -207,6 +219,7 @@ class _LoginPage1State extends State<LoginPage1> {
                                     padding: EdgeInsets.only(left: 7),
                                     width: 100,
                                     child: TextFormField(
+                                      controller: _gender,
                                       textAlign: TextAlign.left,
                                       decoration: InputDecoration(
                                           border: InputBorder.none,
@@ -254,6 +267,7 @@ class _LoginPage1State extends State<LoginPage1> {
                                 height: 100,
                                 // margin: EdgeInsets.all(10),
                                 child: TextFormField(
+                                  controller: _bio,
                                   minLines: 1,
                                   maxLines: 3,
                                   // allow user to enter 3 lines in textfield
@@ -302,16 +316,46 @@ class _LoginPage1State extends State<LoginPage1> {
                                 height: 60,
                                 width: 200,
                                 child: TextButton(
-                                  child: Text(
-                                    "Continue",
-                                    style: GoogleFonts.poppins(
-                                        textStyle: TextStyle(
-                                      color: Color(0xff2F3843),
-                                      fontWeight: FontWeight.w600,
-                                      fontSize: 15,
-                                    )),
-                                  ),
-                                  onPressed: () {
+                                  child: isLoading
+                                      ? CircularProgressIndicator()
+                                      : Text(
+                                          "Continue",
+                                          style: GoogleFonts.poppins(
+                                              textStyle: TextStyle(
+                                            color: Color(0xff2F3843),
+                                            fontWeight: FontWeight.w600,
+                                            fontSize: 15,
+                                          )),
+                                        ),
+                                  onPressed: () async {
+                                    // Updating the datbase with values before routing to next page
+
+                                    setState(() => isLoading = true);
+
+                                    if (_name.text.trim() == "" ||
+                                        _date.text.trim() == "" ||
+                                        _gender.text.trim() == "" ||
+                                        _bio.text.trim() == "") {
+                                      debugPrint("Please enter valid details");
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
+                                        SnackBar(
+                                          content: Text(
+                                              "Please enter valid details"),
+                                        ),
+                                      );
+                                      setState(() => isLoading = false);
+                                      return;
+                                    }
+
+                                    await _services.insertNextInfluencerDetails(
+                                        _name.text.trim(),
+                                        _date.text.trim(),
+                                        _gender.text.trim(),
+                                        _bio.text.trim());
+
+                                    setState(() => isLoading = false);
+
                                     Navigator.push(
                                         context,
                                         MaterialPageRoute(
