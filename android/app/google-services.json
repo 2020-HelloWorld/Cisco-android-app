@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "502616375402",
+    "project_id": "interra-flutter",
+    "storage_bucket": "interra-flutter.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:502616375402:android:9484f3a489a9a6980e4a13",
+        "android_client_info": {
+          "package_name": "com.example.firstpg"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "502616375402-i7pmnflpv46vio3guidnr3d0634b67u3.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.firstpg",
+            "certificate_hash": "0d4279ae1cee3bfa1cf73575ef2c1a4d552c872d"
+          }
+        },
+        {
+          "client_id": "502616375402-3kp3e700g6vdtsmaspsp6mqdetn1dbpe.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDS8yGQszxNwI2HvD3WgEmM7W0hWZg8JNQ"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "502616375402-3kp3e700g6vdtsmaspsp6mqdetn1dbpe.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

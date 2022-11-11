@@ -2,6 +2,7 @@
 //import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
 
 import 'package:device_preview/device_preview.dart';
+import 'package:firebase_core/firebase_core.dart';
 import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
 import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
 import 'package:firstpg/Pages/chat/chat2.dart';
@@ -14,7 +15,10 @@ import 'Pages/HomePage.dart';
 import 'Pages/login/otp_login/myHomePage.dart';
 import 'Pages/login/otp_login/otpPages/firstpage.dart';
 
-void main() {
+Future main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Firebase.initializeApp();
+
   runApp(const MyApp());
 }
 
