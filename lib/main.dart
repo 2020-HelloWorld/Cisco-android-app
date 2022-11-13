@@ -14,9 +14,11 @@ import 'Pages/Dashboard/BrandDetailsProfile.dart';
 import 'Pages/HomePage.dart';
 import 'Pages/login/otp_login/myHomePage.dart';
 import 'Pages/login/otp_login/otpPages/firstpage.dart';
+import 'Pages/Dashboard/InfluencerAnalytics.dart';
 
 Future main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await Firebase.initializeApp();
 
   runApp(const MyApp());
@@ -32,7 +34,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: 'Poppins'),
-          home: HomePage() //MyHomePage(title: 'Hello',),
+          home: BrandDashboard() //MyHomePage(title: 'Hello',),
           ),
       designSize: const Size(375, 812),
     );
