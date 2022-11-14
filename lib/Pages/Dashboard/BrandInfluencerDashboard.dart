@@ -6,8 +6,8 @@ import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'DashboardHeader.dart';
 import 'HorizontalList.dart';
 
-class BrandDashboard extends StatelessWidget {
-  const BrandDashboard({Key? key}) : super(key: key);
+class BrandInfDashboard extends StatelessWidget {
+  const BrandInfDashboard({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +39,7 @@ class BrandDashboard extends StatelessWidget {
                 leading: Icon(Icons.search),
                 title: TextFormField(
                   decoration: InputDecoration(
-                      hintText: "Search Infulencers...",
-                      border: InputBorder.none),
+                      hintText: "Search ", border: InputBorder.none),
                 ),
                 trailing: Icon(Icons.filter_alt_rounded),
               ),
@@ -93,7 +92,7 @@ class BrandDashboard extends StatelessWidget {
           ),
           ListTile(
             title: Text(
-              t = "Top Performing",
+              t = "Trending Brands",
               style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
             ),
             trailing: IconButton(

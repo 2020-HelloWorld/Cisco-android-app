@@ -1,4 +1,5 @@
 import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
+import 'package:firstpg/Pages/Dashboard/BrandInfluencerDashboard.dart';
 import 'package:flutter/material.dart';
 import './user_signup_s.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -442,7 +443,7 @@ class _influencer_detailsState extends State<influencer_details> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              BrandDashboard()));
+                                              BrandInfDashboard()));
                                 },
                               ),
                               decoration: BoxDecoration(

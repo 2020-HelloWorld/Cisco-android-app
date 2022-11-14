@@ -1,6 +1,6 @@
 // ignore_for_file: prefer_const_constructors, prefer_const_literals_to_create_immutables, deprecated_member_use, sort_child_properties_last
 
-import 'package:firstpg/Pages/chat/bottombar.dart';
+//import 'package:firstpg/Pages/DashboardHome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/rendering.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -135,7 +135,7 @@ class _Chat3State extends State<Chat3> {
                               ),
                             ],
                           ),
-                          SizedBox(width: 146.5),
+                          SizedBox(width: 136.w),
                           Icon(
                             Icons.more_vert,
                             color: Color.fromARGB(255, 155, 117, 220),
@@ -197,7 +197,7 @@ class _Chat3State extends State<Chat3> {
           ],
         ),
       ),
-      bottomNavigationBar: bottomappbar(),
+      //bottomNavigationBar: bottomappbar(),
     );
   }
 

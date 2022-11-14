@@ -1,3 +1,5 @@
+import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
+import 'package:firstpg/Pages/DashboardHome.dart';
 import 'package:firstpg/Pages/login/otp_login/otpPages/Dashboard.dart';
 import 'package:firstpg/Pages/login/otp_login/otpPages/verify.dart';
 import 'package:firstpg/Pages/login/signup.dart';
@@ -7,8 +9,13 @@ import 'package:flutter/src/widgets/framework.dart';
 
 class NumericPad extends StatelessWidget {
   int screen;
+  String choice;
   final Function(int) onNumberSelected;
-  NumericPad({required this.screen, required this.onNumberSelected, super.key});
+  NumericPad(
+      {required this.screen,
+      required this.choice,
+      required this.onNumberSelected,
+      super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -152,12 +159,18 @@ class NumericPad extends StatelessWidget {
     return Expanded(
       child: GestureDetector(
         onTap: () {
-          if (screen == 1)
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => Verify()));
-          else
-            Navigator.of(context)
-                .push(MaterialPageRoute(builder: (context) => SignUp()));
+          if (screen == 2) {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) =>
+                    (choice != "login") ? SignUp() : BrandDashboard()));
+          } else if (screen == 1 && choice == "create") {
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => Verify(),
+                settings: const RouteSettings(arguments: 'create')));
+          } else if (choice == "login")
+            Navigator.of(context).push(MaterialPageRoute(
+                builder: (context) => Verify(),
+                settings: const RouteSettings(arguments: 'login')));
         },
         child: Padding(
           padding: const EdgeInsets.all(4.0),

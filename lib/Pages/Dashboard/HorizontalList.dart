@@ -1,5 +1,6 @@
 import 'package:firstpg/Pages/Dashboard/BrandDashboardImgs.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class HorizontalList extends StatelessWidget {
   String choice;
@@ -9,19 +10,22 @@ class HorizontalList extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.only(left: 15),
-      height: 175,
+      height: 175.h,
+      width: MediaQuery.of(context).size.width,
       child: ListView.builder(
+          // shrinkWrap: true,
+          physics: BouncingScrollPhysics(),
           itemCount: 6,
           scrollDirection: Axis.horizontal,
           itemBuilder: (context, index) {
             return Stack(children: [
               Card(
-                elevation: 12,
+                elevation: 12.h,
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(12)),
                 child: Container(
                   // margin: EdgeInsets.only(left: 30),
-                  width: 125,
+                  width: 125.w,
                   decoration: BoxDecoration(
                       color: Colors.red,
                       borderRadius: BorderRadius.circular(10)),
@@ -30,7 +34,9 @@ class HorizontalList extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10),
                       child: (choice == "Trending"
                           ? Image.asset(infT[index]["icon"])
-                          : Image.asset(infTop[index]["icon"])),
+                          : (choice == "Trending Brands")
+                              ? Image.asset(infBrand[index]["icon"])
+                              : Image.asset(infTop[index]["icon"])),
                       // child: Image.network(
                       //     "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTwMTRVUGAGKSV-zYdlhlGBx3pUsnWZhcyQBA&usqp=CAU"),
                     ),
@@ -41,8 +47,8 @@ class HorizontalList extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(left: 4.80),
                 child: Container(
-                  height: 45,
-                  width: 45,
+                  height: 45.w,
+                  width: 45.h,
                   decoration: BoxDecoration(
                       color: Colors.white.withOpacity(0.4),
                       borderRadius: BorderRadius.circular(8)),
@@ -53,7 +59,9 @@ class HorizontalList extends StatelessWidget {
                         child: Text(
                           (choice == "Trending"
                               ? infT[index]["Stars"]
-                              : infTop[index]["Stars"]),
+                              : (choice == "Trending Brands")
+                                  ? infBrand[index]["Stars"]
+                                  : infTop[index]["Stars"]),
                           style: TextStyle(
                               fontSize: 20,
                               fontWeight: FontWeight.bold,
@@ -68,8 +76,8 @@ class HorizontalList extends StatelessWidget {
               Padding(
                 padding: const EdgeInsets.only(top: 136.20, left: 5),
                 child: Container(
-                  height: 35,
-                  width: 125,
+                  height: 35.h,
+                  width: 125.w,
                   decoration: BoxDecoration(
                     color: Colors.white.withOpacity(0.4),
                     borderRadius: BorderRadius.circular(8),
@@ -86,7 +94,9 @@ class HorizontalList extends StatelessWidget {
                         child: Text(
                           (choice == "Trending"
                               ? infT[index]["followers"]
-                              : infTop[index]["followers"]),
+                              : (choice == "Trending Brands")
+                                  ? infBrand[index]["followers"]
+                                  : infTop[index]["followers"]),
                           style: TextStyle(
                               fontSize: 18,
                               fontWeight: FontWeight.bold,

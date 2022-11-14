@@ -5,7 +5,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:google_fonts/google_fonts.dart';
 
-import 'bottombar.dart';
+//import '../DashboardHome.dart';
 import 'contact_cont.dart';
 
 class ContactList extends StatefulWidget {
@@ -94,7 +94,7 @@ class _ContactListState extends State<ContactList> {
           ],
         ),
       ),
-      bottomNavigationBar: bottomappbar(),
+      //bottomNavigationBar: bottomappbar(),
     );
   }
 }

@@ -1,4 +1,4 @@
-import 'package:firstpg/Pages/chat/bottombar.dart';
+//import 'package:firstpg/Pages/DashboardHome.dart';
 import 'package:firstpg/Pages/chat/chat3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -425,7 +425,7 @@ class _ProfileState extends State<Profile> {
           ),
         ),
       ),
-      bottomNavigationBar: bottomappbar(),
+      //bottomNavigationBar: bottomappbar(),
     );
   }
 }

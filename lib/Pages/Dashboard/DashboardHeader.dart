@@ -7,14 +7,18 @@ class DashboardHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     double screenheight = MediaQuery.of(context).size.height;
     double screenwidth = MediaQuery.of(context).size.width;
-    return SafeArea(
+    return Padding(
+      padding: EdgeInsets.only(
+          top: screenheight * 0.01,
+          left: screenwidth * 0.02,
+          right: screenwidth * 0.02),
       child: Row(
-        // mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         // crossAxisAlignment: CrossAxisAlignment.center,
         children: [
-          SizedBox(
-            width: screenwidth * 0.01,
-          ),
+          // SizedBox(
+          //   width: screenwidth * 0.01,
+          // ),
           Icon(Icons.dehaze),
           SizedBox(
             width: screenwidth * 0.2,
@@ -25,7 +29,7 @@ class DashboardHeader extends StatelessWidget {
             height: 61,
           ),
           SizedBox(
-            width: screenwidth * 0.2,
+            width: screenwidth * 0.17,
           ),
           Icon(Icons.notifications_sharp)
         ],
