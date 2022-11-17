@@ -164,6 +164,7 @@ class _FirstPageState extends State<FirstPage> {
                 });
               },
               screen: 1,
+              choice: "login",
             )
           ],
         ),

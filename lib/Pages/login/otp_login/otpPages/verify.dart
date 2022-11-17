@@ -1,3 +1,5 @@
+import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
+import 'package:firstpg/Pages/DashboardHome.dart';
 import 'package:firstpg/Pages/login/otp_login/otpPages/Dashboard.dart';
 import 'package:firstpg/Pages/login/signup.dart';
 import 'package:flutter/material.dart';
@@ -8,7 +10,7 @@ import 'package:flutter/src/widgets/framework.dart';
 import 'numberbutton.dart';
 
 class Verify extends StatefulWidget {
-  const Verify({super.key});
+  Verify({super.key});
 
   @override
   State<Verify> createState() => _VerifyState();
@@ -18,6 +20,7 @@ class _VerifyState extends State<Verify> {
   String code = "";
   @override
   Widget build(BuildContext context) {
+    final choice = ModalRoute.of(context)!.settings.arguments as String;
     return Scaffold(
       backgroundColor: Color(0xffEBF3FF),
       body: SingleChildScrollView(
@@ -106,7 +109,9 @@ class _VerifyState extends State<Verify> {
                       child: GestureDetector(
                         onTap: () {
                           Navigator.of(context).push(MaterialPageRoute(
-                              builder: (context) => SignUp()));
+                              builder: (context) => (choice == "create")
+                                  ? SignUp()
+                                  : DashboardRoot()));
                         },
                         child: Container(
                           width: 263.84,
@@ -181,6 +186,7 @@ class _VerifyState extends State<Verify> {
                 });
               },
               screen: 2,
+              choice: choice,
             )
           ],
         ),

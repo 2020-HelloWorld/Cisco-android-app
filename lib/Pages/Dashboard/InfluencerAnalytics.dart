@@ -6,7 +6,6 @@ import 'package:firstpg/services/firebase_services.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_neumorphic/flutter_neumorphic.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:firstpg/Pages/chat/bottombar.dart';
 import './AnalyticsPages/likes_Analytics.dart';
 import './AnalyticsPages/Comments.dart';
 import 'AnalyticsPages/Follower_analytics.dart';
@@ -294,7 +293,7 @@ class _InfluencerAnalyticsState extends State<InfluencerAnalytics> {
           ),
         ),
       ),
-      bottomNavigationBar: bottomappbar(),
+      //bottomNavigationBar: bottomappbar(),
     );
   }
 }

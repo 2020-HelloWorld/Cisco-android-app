@@ -1,5 +1,6 @@
 import 'package:firstpg/Pages/Dashboard/BrandDashboard.dart';
 import 'package:firstpg/Pages/Dashboard/BrandDetails.dart';
+import 'package:firstpg/Pages/DashboardHome.dart';
 import 'package:firstpg/Pages/login/brand_details.dart';
 import './brand_signup_s.dart';
 import 'package:flutter/material.dart';
@@ -610,7 +611,7 @@ class _Brand_detailsState extends State<Brand_details> {
                                       context,
                                       MaterialPageRoute(
                                           builder: (context) =>
-                                              BrandDashboard()));
+                                              DashboardRoot()));
                                 },
                               ),
                               decoration: BoxDecoration(

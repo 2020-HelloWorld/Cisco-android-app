@@ -1,7 +1,7 @@
 import 'package:firstpg/Pages/Dashboard/BrandDetailsContainer.dart';
 import 'package:firstpg/Pages/Dashboard/BrandDetailsImgs.dart';
 import 'package:firstpg/Pages/Dashboard/DashboardHeader.dart';
-import 'package:firstpg/Pages/chat/bottombar.dart';
+//import 'package:firstpg/Pages/DashboardHome.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
 import 'package:flutter/src/widgets/framework.dart';
@@ -107,7 +107,7 @@ class _BrandDetailsState extends State<BrandDetails> {
           ),
         ),
       ),
-      bottomNavigationBar: bottomappbar(),
+      //bottomNavigationBar: bottomappbar(),
     );
   }
 }
