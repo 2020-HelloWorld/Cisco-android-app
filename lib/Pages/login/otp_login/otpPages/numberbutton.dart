@@ -162,7 +162,7 @@ class NumericPad extends StatelessWidget {
           if (screen == 2) {
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) =>
-                    (choice != "login") ? SignUp() : BrandDashboard()));
+                    (choice != "login") ? SignUp() : DashboardRoot()));
           } else if (screen == 1 && choice == "create") {
             Navigator.of(context).push(MaterialPageRoute(
                 builder: (context) => Verify(),

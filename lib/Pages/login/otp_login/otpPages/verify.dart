@@ -111,7 +111,7 @@ class _VerifyState extends State<Verify> {
                           Navigator.of(context).push(MaterialPageRoute(
                               builder: (context) => (choice == "create")
                                   ? SignUp()
-                                  : BrandDashboard()));
+                                  : DashboardRoot()));
                         },
                         child: Container(
                           width: 263.84,
