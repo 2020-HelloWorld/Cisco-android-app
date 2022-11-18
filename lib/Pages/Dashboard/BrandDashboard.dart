@@ -39,14 +39,17 @@ class BrandDashboard extends StatelessWidget {
                 leading: Icon(Icons.search),
                 title: TextFormField(
                   decoration: InputDecoration(
-                      hintText: "Search Infulencers...",
+                      hintText: "Search Influencers...",
                       border: InputBorder.none),
                 ),
                 trailing: Icon(Icons.filter_alt_rounded),
               ),
               decoration: BoxDecoration(
                 color: Color(0xffEBF3FF),
-                borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.only(
+                    topRight: Radius.circular(10),
+                    bottomLeft: Radius.circular(10),
+                    bottomRight: Radius.circular(10)),
                 boxShadow: [
                   BoxShadow(
                     color: Color(0xFF9E9E9E).withOpacity(0.5),
@@ -105,19 +108,37 @@ class BrandDashboard extends StatelessWidget {
           ),
           HorizontalList(choice: t),
           SizedBox(
-            height: 50,
+            height: 10,
           ),
           ListTile(
-            title: Text(
-              t = "Trending",
-              style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+            title: Row(
+              children: [
+                Text(
+                  t = "Social Enablers",
+                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.w600),
+                ),
+                Container(
+                  height: 100,
+                  width: screenWidth * 0.3,
+                  child: Image.asset('assets/images/social_logo.png'),
+                )
+              ],
             ),
-            trailing: IconButton(
-              icon: Icon(Icons.arrow_forward),
-              onPressed: () {
-                Navigator.push(context,
-                    MaterialPageRoute(builder: (context) => BrandDetails()));
-              },
+            trailing: Column(
+              children: [
+                SizedBox(
+                  height: 8,
+                ),
+                IconButton(
+                  icon: Icon(Icons.arrow_forward),
+                  onPressed: () {
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => BrandDetails()));
+                  },
+                ),
+              ],
             ),
           ),
           HorizontalList(choice: t),

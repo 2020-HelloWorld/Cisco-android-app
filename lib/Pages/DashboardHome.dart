@@ -16,14 +16,14 @@ class DashboardRoot extends StatelessWidget {
     return PersistentBottomBarScaffold(
       items: [
         PersistentTabItem(
-          tab: BrandInfDashboard(),
+          tab: BrandDashboard(),
           icon: Icons.home,
           title: 'Home',
           color: Color(0xffB58BFF),
           navigatorkey: _tab1navigatorKey,
         ),
         PersistentTabItem(
-          tab: BrandDashboard(),
+          tab: BrandInfDashboard(),
           icon: Icons.search,
           title: 'Search',
           color: Color(0xffB58BFF),

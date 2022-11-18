@@ -35,7 +35,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) => MaterialApp(
           debugShowCheckedModeBanner: false,
           theme: ThemeData(fontFamily: 'Poppins'),
-          home: BrandDashboard() //MyHomePage(title: 'Hello',),
+          home: HomePage() //MyHomePage(title: 'Hello',),
           ),
       designSize: const Size(375, 812),
     );

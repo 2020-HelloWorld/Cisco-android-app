@@ -1,4 +1,5 @@
 //import 'package:firstpg/Pages/DashboardHome.dart';
+import 'package:firstpg/Pages/Dashboard/InfluencerAnalytics.dart';
 import 'package:firstpg/Pages/chat/chat3.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/src/widgets/container.dart';
@@ -103,7 +104,8 @@ class _ProfileState extends State<Profile> {
                         SizedBox(height: 72.h),
                         Container(
                           width: 305.89.w,
-                          height: 152.h,
+                          // height: 152.h,
+                          height: 165.h,
                           decoration: BoxDecoration(
                             color: Color(0xffEBF3FF),
                             borderRadius: BorderRadius.all(Radius.circular(15)),
@@ -121,8 +123,9 @@ class _ProfileState extends State<Profile> {
                             ],
                           ),
                           child: Padding(
-                            padding: EdgeInsets.only(left: 23.w, right: 31.8.w),
+                            padding: EdgeInsets.only(left: 23.w),
                             child: Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
                               children: [
                                 // SizedBox(width: 23),
                                 Padding(
@@ -201,7 +204,38 @@ class _ProfileState extends State<Profile> {
                                       )
                                     ],
                                   ),
-                                )
+                                ),
+                                //SizedBox(width: 14.w),
+                                Padding(
+                                  padding:
+                                      EdgeInsets.only(right: 5.w, bottom: 53.h),
+                                  child: GestureDetector(
+                                      onTap: () {
+                                        Navigator.push(
+                                            context,
+                                            MaterialPageRoute(
+                                                builder: (context) =>
+                                                    InfluencerAnalytics()));
+                                      },
+                                      child: Icon(
+                                        Icons.analytics_outlined,
+                                        color: Color(0xffB58BFF),
+                                        shadows: [
+                                          BoxShadow(
+                                            blurRadius: 3,
+                                            offset: Offset(-2, -2),
+                                            color: Colors.white,
+                                          ),
+                                          BoxShadow(
+                                            blurRadius: 3,
+                                            offset: Offset(2, 2),
+                                            //color: Colors.black
+                                            color: Color.fromRGBO(
+                                                180, 193, 213, 0.6),
+                                          ),
+                                        ],
+                                      )),
+                                ),
                               ],
                             ),
                           ),
